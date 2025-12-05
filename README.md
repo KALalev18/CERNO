@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CERNO Website - LAB Case Club
 
 A modern, responsive website for the LAB Case Club at CERNO European Business Club.
@@ -44,3 +45,6 @@ CERNO Website/
 ## License
 
 © 2025 LAB Case Club. All rights reserved.
+=======
+# CERNO
+>>>>>>> 430c6971bde8c1597f7a1c6ddd50a3d63402b950
