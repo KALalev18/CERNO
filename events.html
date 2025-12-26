@@ -34,10 +34,10 @@
             <div class="competitions-grid">
                 <div class="competition-card">
                     <div class="competition-image">
-                        <img src="images/question mark.png" alt="Competition 1">
+                        <img src="images/duuniexpo.png" alt="DuuniExpo 2026">
                     </div>
-                    <h3>Name 1</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris enim magna, ullamcorper ac est sit amet, dignissim semper sem. Ut vehicula rutrum cursus.</p>
+                    <h3>DuuniExpo 2026</h3>
+                    <p>We warmly welcome the Lahti Case Club to attend DuuniExpo on 28th of January 2026 from 9:30 a.m. to 3:30 p.m.</p>
                 </div>
                 
                 <div class="competition-card">
@@ -63,9 +63,26 @@
     <section class="calendar-section">
         <div class="container-wide">
             <h2 class="section-title">Calendar</h2>
-            <div class="calendar-placeholder">
-                <!-- Calendar widget will be embedded here -->
-                <p>Calendar integration coming soon</p>
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <button id="prevMonth" class="calendar-nav">‹</button>
+                    <h3 id="currentMonth"></h3>
+                    <button id="nextMonth" class="calendar-nav">›</button>
+                </div>
+                <div class="calendar-days">
+                    <div class="day-name">Mon</div>
+                    <div class="day-name">Tue</div>
+                    <div class="day-name">Wed</div>
+                    <div class="day-name">Thu</div>
+                    <div class="day-name">Fri</div>
+                    <div class="day-name">Sat</div>
+                    <div class="day-name">Sun</div>
+                </div>
+                <div id="calendarDates" class="calendar-dates"></div>
+                <div class="calendar-events">
+                    <h4>Upcoming Events</h4>
+                    <div id="eventsList" class="events-list"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -91,19 +108,22 @@
                 <div class="footer-info">
                     <h4>LAB Case Club</h4>
                     <p>Mukkulankatu 19, 15210 Lahti</p>
+                    <div class="footer-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1937.9425346635!2d25.661447!3d60.982586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x468e4e5c8c6c6c6d%3A0x8c6c6c6c6c6c6c6c!2sMukkulankatu%2019%2C%2015210%20Lahti!5e0!3m2!1sen!2sfi!4v1234567890" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
                 </div>
                 <div class="footer-legal">
                     <h4>Terms and Conditions</h4>
                     <p><a href="#">Privacy Policy</a></p>
                     <div class="footer-social">
-                        <a href="#" aria-label="Instagram">
+                        <a href="https://www.instagram.com/cernocaseclub/" target="_blank" aria-label="Instagram">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
                                 <rect x="2" y="2" width="20" height="20" rx="5" stroke="white" fill="none" stroke-width="2"/>
                                 <circle cx="12" cy="12" r="4" stroke="white" fill="none" stroke-width="2"/>
                                 <circle cx="17.5" cy="6.5" r="1.5" fill="white"/>
                             </svg>
                         </a>
-                        <a href="#" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/company/cerno-case-club" target="_blank" aria-label="LinkedIn">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
                                 <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
                             </svg>
@@ -111,7 +131,7 @@
                     </div>
                 </div>
                 <div class="footer-copyright">
-                    <p>© 2025 LAB Case Club. All rights reserved.</p>
+                    <p>© 2026 LAB Case Club. All rights reserved.</p>
                 </div>
             </div>
         </div>
