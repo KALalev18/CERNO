@@ -50,8 +50,18 @@ document.addEventListener('DOMContentLoaded', function() {
     if (businessForm) {
         businessForm.addEventListener('submit', function(e) {
             e.preventDefault();
+            console.log('Business form submitted');
+            
             const statusEl = document.getElementById('businessFormStatus');
             const submitBtn = this.querySelector('.form-submit-btn');
+            
+            // Check if emailjs is loaded
+            if (typeof emailjs === 'undefined') {
+                console.error('EmailJS not loaded!');
+                statusEl.textContent = 'Email service not loaded. Please refresh the page.';
+                statusEl.className = 'form-status error';
+                return;
+            }
             
             // Disable button and show loading
             submitBtn.disabled = true;
@@ -59,20 +69,20 @@ document.addEventListener('DOMContentLoaded', function() {
             statusEl.textContent = '';
             statusEl.className = 'form-status';
             
+            console.log('Sending business form with EmailJS...');
+            
             // Send email using EmailJS
-            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
-                .then(function() {
-                    statusEl.textContent = 'Thank you for your submission! We will get back to you soon.';
+            emailjs.sendForm('service_uljurbn', 'template_3xnw4wd', this)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    statusEl.textContent = 'Thank you for your submission! We will get back to you soon. You can close this window.';
                     statusEl.className = 'form-status success';
                     businessForm.reset();
-                    setTimeout(() => {
-                        closeContactForm();
-                        statusEl.textContent = '';
-                    }, 3000);
+                    // Don't auto-close - let user close manually after reading the message
                 }, function(error) {
-                    statusEl.textContent = 'Failed to send message. Please try again or contact us directly via email.';
+                    console.error('FAILED...', error);
+                    statusEl.textContent = 'Failed to send message: ' + (error.text || error.message || 'Unknown error');
                     statusEl.className = 'form-status error';
-                    console.error('EmailJS error:', error);
                 })
                 .finally(function() {
                     submitBtn.disabled = false;
@@ -84,8 +94,18 @@ document.addEventListener('DOMContentLoaded', function() {
     if (studentForm) {
         studentForm.addEventListener('submit', function(e) {
             e.preventDefault();
+            console.log('Student form submitted');
+            
             const statusEl = document.getElementById('studentFormStatus');
             const submitBtn = this.querySelector('.form-submit-btn');
+            
+            // Check if emailjs is loaded
+            if (typeof emailjs === 'undefined') {
+                console.error('EmailJS not loaded!');
+                statusEl.textContent = 'Email service not loaded. Please refresh the page.';
+                statusEl.className = 'form-status error';
+                return;
+            }
             
             // Disable button and show loading
             submitBtn.disabled = true;
@@ -93,20 +113,20 @@ document.addEventListener('DOMContentLoaded', function() {
             statusEl.textContent = '';
             statusEl.className = 'form-status';
             
+            console.log('Sending student form with EmailJS...');
+            
             // Send email using EmailJS
-            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
-                .then(function() {
-                    statusEl.textContent = 'Thank you for your submission! We will get back to you soon.';
+            emailjs.sendForm('service_uljurbn', 'template_3xnw4wd', this)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    statusEl.textContent = 'Thank you for your submission! We will get back to you soon. You can close this window.';
                     statusEl.className = 'form-status success';
                     studentForm.reset();
-                    setTimeout(() => {
-                        closeContactForm();
-                        statusEl.textContent = '';
-                    }, 3000);
+                    // Don't auto-close - let user close manually after reading the message
                 }, function(error) {
-                    statusEl.textContent = 'Failed to send message. Please try again or contact us directly via email.';
+                    console.error('FAILED...', error);
+                    statusEl.textContent = 'Failed to send message: ' + (error.text || error.message || 'Unknown error');
                     statusEl.className = 'form-status error';
-                    console.error('EmailJS error:', error);
                 })
                 .finally(function() {
                     submitBtn.disabled = false;
