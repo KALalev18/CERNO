@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close popup when clicking outside
     const businessPopup = document.getElementById('businessFormPopup');
     const studentPopup = document.getElementById('studentFormPopup');
+    const privacyPopup = document.getElementById('privacyPopup');
+    const partnersPopup = document.getElementById('partnersPopup');
     
     if (businessPopup) {
         businessPopup.addEventListener('click', function(e) {
@@ -39,6 +41,22 @@ document.addEventListener('DOMContentLoaded', function() {
         studentPopup.addEventListener('click', function(e) {
             if (e.target === studentPopup) {
                 closeContactForm();
+            }
+        });
+    }
+
+    if (privacyPopup) {
+        privacyPopup.addEventListener('click', function(e) {
+            if (e.target === privacyPopup) {
+                closeInfoPopup();
+            }
+        });
+    }
+
+    if (partnersPopup) {
+        partnersPopup.addEventListener('click', function(e) {
+            if (e.target === partnersPopup) {
+                closeInfoPopup();
             }
         });
     }
@@ -167,6 +185,37 @@ function closeContactForm() {
     if (studentPopup) {
         studentPopup.classList.remove('active');
     }
+    document.body.style.overflow = '';
+}
+
+// Open privacy policy popup
+function openPrivacyPopup(event) {
+    if (event) event.preventDefault();
+    const popup = document.getElementById('privacyPopup');
+    if (popup) {
+        popup.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+// Open partners popup
+function openPartnersPopup(event) {
+    if (event) event.preventDefault();
+    const popup = document.getElementById('partnersPopup');
+    if (popup) {
+        popup.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+// sponsors popup removed; use Partners page section instead
+
+// Close privacy/sponsors popups
+function closeInfoPopup() {
+    const privacyPopup = document.getElementById('privacyPopup');
+    const partnersPopup = document.getElementById('partnersPopup');
+    if (privacyPopup) privacyPopup.classList.remove('active');
+    if (partnersPopup) partnersPopup.classList.remove('active');
     document.body.style.overflow = '';
 }
 

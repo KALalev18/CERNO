@@ -778,10 +778,11 @@ body {
 }
 
 .popup-content {
-    background-color: white;
+    background-color: #fff;
+    color: #000;
     width: 100%;
-    max-width: 600px;
-    padding: 40px;
+    max-width: 720px;
+    padding: 36px 40px;
     border-radius: 8px;
     position: relative;
     margin: auto;
@@ -795,19 +796,36 @@ body {
     border: none;
     font-size: 32px;
     cursor: pointer;
-    color: #666;
+    color: #000;
     line-height: 1;
 }
 
 .popup-close:hover {
-    color: #000;
+    color: #444;
 }
 
-.popup-content h2 {
-    font-size: 28px;
-    margin-bottom: 30px;
-    text-align: center;
-    font-weight: 400;
+.popup-content h3 {
+    font-size: 22px;
+    margin-bottom: 18px;
+    color: #000;
+}
+.popup-content p {
+    color: #000;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+.popup-content a {
+    color: #0055aa;
+    text-decoration: underline;
+}
+    color: #e6e6e6;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.popup-content a {
+    color: #ffd166;
+    text-decoration: underline;
 }
 
 .contact-form {
@@ -950,6 +968,20 @@ body {
 }
 
 .resource-card.downloadable:hover .resource-image img {
+    transform: scale(1.1);
+}
+
+/* Make embedded PDFs behave like images for hover animation */
+.resource-image iframe,
+.resource-image object {
+    width: 100%;
+    height: 100%;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.resource-card.downloadable:hover .resource-image iframe,
+.resource-card.downloadable:hover .resource-image object {
     transform: scale(1.1);
 }
 

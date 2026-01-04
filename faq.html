@@ -71,7 +71,7 @@
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="events.html">Events</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="index.html#partners">Partners</a></li>
+                        <li><a href="#" onclick="openPartnersPopup()">Partners</a></li>
                     </ul>
                 </div>
                 <div class="footer-info">
@@ -83,7 +83,7 @@
                 </div>
                 <div class="footer-legal">
                     <h4>Terms and Conditions</h4>
-                    <p><a href="#">Privacy Policy</a></p>
+                    <p><a href="#" onclick="openPrivacyPopup()">Privacy Policy</a></p>
                     <div class="footer-social">
                         <a href="https://www.instagram.com/cernocaseclub/" target="_blank" aria-label="Instagram">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
@@ -105,5 +105,41 @@
             </div>
         </div>
     </footer>
+    <!-- Privacy Policy Popup -->
+    <div id="privacyPopup" class="popup-overlay">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closeInfoPopup()">×</button>
+            <h3>Privacy Policy</h3>
+            <p>Introduction: LAB Case Club ("we", "us", "our") is committed to protecting the privacy of visitors to our website. This policy explains what personal information we collect, why we collect it, how we use it, and your rights.</p>
+            <h3>Information We Collect</h3>
+            <p>We collect personal data that you voluntarily provide when you contact us using the contact forms on this site: typically your name, email address, and message content. We may also process basic technical information automatically (e.g., browser type, device, IP address) for site operation and security.</p>
+            <h3>How We Use Your Data</h3>
+            <p>We use submitted contact details to respond to enquiries, coordinate events, and manage partnerships. We do not use personal data for marketing unless you explicitly opt in. Technical data may be used to improve website performance and security.</p>
+            <h3>Third Parties</h3>
+            <p>We use EmailJS to deliver contact-form messages. Please review EmailJS's privacy documentation for details on their processing. This site also embeds Google Maps for location display; Google may collect information according to their privacy policy.</p>
+            <h3>Retention and Security</h3>
+            <p>We retain submissions only as long as necessary to fulfil the purpose for which they were submitted or as required by law. We take reasonable technical and organisational measures to protect your information, but cannot guarantee absolute security for data transmitted over the internet.</p>
+            <h3>Your Rights</h3>
+            <p>You have the right to access, correct, or request deletion of your personal data held by us. To exercise these rights, please <a href="contact.html">contact us</a>. We will respond to verified requests within a reasonable timeframe.</p>
+            <p>Contact: For privacy questions, please reach out via our <a href="contact.html">contact page</a>.</p>
+        </div>
+    </div>
+
+    <!-- Sponsors Popup -->
+    <!-- partners popup (re-added) -->
+    <div id="partnersPopup" class="popup-overlay">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closeInfoPopup()">×</button>
+            <h3>Sponsorship & Partners</h3>
+            <p><strong>Overview:</strong> LAB Case Club welcomes collaboration with organisations interested in supporting student learning, events, and career connections. We are open to establishing partnerships that provide mutual value for students and organisations.</p>
+            <h3>Partnership Opportunities</h3>
+            <p>Sponsorship options include event support, case cooperation, branded merchandise (hoodies, mugs, pens), recruitment sessions, and workshop collaborations. Partners gain visibility through our events, website, and social channels.</p>
+            <h3>How We Work With Partners</h3>
+            <p>We tailor partnership packages to match your organisation's goals and timelines. Packages typically include logo placement, speaking opportunities, recruitment access, and co-branded materials depending on the level of support.</p>
+            <h3>Partners</h3>
+            <p>Current partners are listed on our homepage when agreements are active. If none are shown, we are actively seeking collaborations.</p>
+            <p><strong>Interested?</strong> Please <a href="contact.html">contact us</a> to request a partnership proposal or discuss tailored options.</p>
+        </div>
+    </div>
 </body>
 </html>
