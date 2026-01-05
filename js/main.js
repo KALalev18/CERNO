@@ -72,6 +72,18 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const statusEl = document.getElementById('businessFormStatus');
             const submitBtn = this.querySelector('.form-submit-btn');
+            const phoneInput = document.getElementById('businessPhone');
+            
+            // Validate phone number if provided
+            if (phoneInput.value.trim() !== '') {
+                const phonePattern = /^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,9}$/;
+                if (!phonePattern.test(phoneInput.value.trim())) {
+                    statusEl.textContent = 'Please enter a valid phone number (e.g., +358 40 123 4567 or 040-123-4567)';
+                    statusEl.className = 'form-status error';
+                    phoneInput.focus();
+                    return;
+                }
+            }
             
             // Check if emailjs is loaded
             if (typeof emailjs === 'undefined') {
@@ -116,6 +128,18 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const statusEl = document.getElementById('studentFormStatus');
             const submitBtn = this.querySelector('.form-submit-btn');
+            const phoneInput = document.getElementById('studentPhone');
+            
+            // Validate phone number if provided
+            if (phoneInput.value.trim() !== '') {
+                const phonePattern = /^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,9}$/;
+                if (!phonePattern.test(phoneInput.value.trim())) {
+                    statusEl.textContent = 'Please enter a valid phone number (e.g., +358 40 123 4567 or 040-123-4567)';
+                    statusEl.className = 'form-status error';
+                    phoneInput.focus();
+                    return;
+                }
+            }
             
             // Check if emailjs is loaded
             if (typeof emailjs === 'undefined') {
@@ -409,3 +433,73 @@ function downloadICS(event) {
 
 // Initialize calendar when DOM is loaded
 document.addEventListener('DOMContentLoaded', initCalendar);
+
+// Gallery Navigation for Resource Cards
+const galleries = {
+    'NCC2025': {
+        folder: 'images/albums/NCC 2025',
+        images: [], // Will be populated with images from the folder
+        currentIndex: 0
+    }
+};
+
+// Initialize gallery - you need to manually add images to this array
+// or create a server-side script to list files
+galleries['NCC2025'].images = [
+    'images/resources/ncc-preview.png',
+    'images/albums/NCC 2025/WhatsApp Image 2026-01-04 at 14.29.08 (1).jpeg',
+    'images/albums/NCC 2025/WhatsApp Image 2026-01-04 at 14.29.08.jpeg',
+    'images/albums/NCC 2025/WhatsApp Image 2026-01-04 at 14.29.09.jpeg',
+    'images/albums/NCC 2025/WhatsApp Image 2026-01-04 at 14.29.10 (1).jpeg',
+    'images/albums/NCC 2025/WhatsApp Image 2026-01-04 at 14.29.10.jpeg',
+    'images/albums/NCC 2025/WhatsApp Image 2026-01-04 at 14.29.11 (1).jpeg',
+    'images/albums/NCC 2025/WhatsApp Image 2026-01-04 at 14.29.11 (2).jpeg',
+    'images/albums/NCC 2025/WhatsApp Image 2026-01-04 at 14.29.11 (3).jpeg',
+    'images/albums/NCC 2025/WhatsApp Image 2026-01-04 at 14.29.11.jpeg',
+    'images/albums/NCC 2025/WhatsApp Image 2026-01-04 at 14.29.12 (1).jpeg',
+    'images/albums/NCC 2025/WhatsApp Image 2026-01-04 at 14.29.12 (2).jpeg',
+    'images/albums/NCC 2025/WhatsApp Image 2026-01-04 at 14.29.12 (3).jpeg',
+    'images/albums/NCC 2025/WhatsApp Image 2026-01-04 at 14.29.12.jpeg'
+];
+
+function navigateGallery(event, galleryId, direction) {
+    event.preventDefault();
+    event.stopPropagation();
+    
+    const gallery = galleries[galleryId];
+    if (!gallery || gallery.images.length === 0) return;
+    
+    // Update index
+    gallery.currentIndex = (gallery.currentIndex + direction + gallery.images.length) % gallery.images.length;
+    
+    // Find the gallery container
+    const galleryContainer = document.querySelector(`[data-gallery="${galleryId}"]`);
+    if (!galleryContainer) return;
+    
+    // Update image
+    const img = galleryContainer.querySelector('.gallery-image');
+    if (img) {
+        img.src = gallery.images[gallery.currentIndex];
+    }
+    
+    // Update counter
+    const counter = galleryContainer.querySelector('.gallery-counter');
+    if (counter && gallery.images.length > 1) {
+        counter.textContent = `${gallery.currentIndex + 1} / ${gallery.images.length}`;
+    }
+}
+
+// Initialize gallery counters on page load
+document.addEventListener('DOMContentLoaded', function() {
+    Object.keys(galleries).forEach(galleryId => {
+        const gallery = galleries[galleryId];
+        const galleryContainer = document.querySelector(`[data-gallery="${galleryId}"]`);
+        
+        if (galleryContainer && gallery.images.length > 1) {
+            const counter = galleryContainer.querySelector('.gallery-counter');
+            if (counter) {
+                counter.textContent = `1 / ${gallery.images.length}`;
+            }
+        }
+    });
+});

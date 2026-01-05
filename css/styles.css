@@ -240,7 +240,7 @@ body {
 
 /* Team Hero Section */
 .team-hero {
-    background-image: url('../images/Board_board.JPG');
+    background-image: url('../images/board/Board_board.JPG');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -985,6 +985,55 @@ body {
     transform: scale(1.1);
 }
 
+/* Gallery Navigation */
+.resource-image.gallery-enabled {
+    position: relative;
+}
+
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    font-size: 32px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    padding: 0;
+    line-height: 1;
+}
+
+.gallery-nav:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.gallery-prev {
+    left: 10px;
+}
+
+.gallery-next {
+    right: 10px;
+}
+
+.gallery-counter {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    z-index: 10;
+}
+
 .resource-info {
     background-color: #000;
     color: white;
@@ -1041,7 +1090,7 @@ body {
 }
 
 .footer-logo img {
-    height: 60px;
+    height: 110px;
     width: auto;
     position: relative;
     z-index: 10;
