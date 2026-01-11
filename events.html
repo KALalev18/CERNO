@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events - LAB Case Club - CERNO</title>
+    <title data-translate="events.title">Events - LAB Case Club - CERNO</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/translations.js"></script>
     <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -17,27 +18,32 @@
                 </a>
             </div>
             <ul class="nav-menu">
-                <li><a href="about">About</a></li>
-                <li><a href="events" class="active">Events</a></li>
-                <li><a href="resources">Resources</a></li>
-                <li><a href="faq">FAQ</a></li>
+                <li><a href="about.html" data-translate="nav.about">About</a></li>
+                <li><a href="events.html" class="active" data-translate="nav.events">Events</a></li>
+                <li><a href="resources.html" data-translate="nav.resources">Resources</a></li>
+                <li><a href="faq.html" data-translate="nav.faq">FAQ</a></li>
             </ul>
-            <a href="contact" class="contact-btn">Contact us</a>
+            <div class="language-switcher">
+                <button class="lang-btn" data-lang="fi" onclick="setLanguage('fi')">FI</button>
+                <span class="lang-separator">/</span>
+                <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+            </div>
+            <a href="contact.html" class="contact-btn" data-translate="nav.contact">Contact us</a>
         </div>
     </nav>
 
     <!-- Competitions Section -->
     <section class="competitions-section">
         <div class="container-wide">
-            <h1 class="section-title">Upcoming Events</h1>
+            <h1 class="section-title" data-translate="events.upcoming">Upcoming Events</h1>
             
             <div class="competitions-grid">
                 <div class="competition-card">
                     <div class="competition-image">
                         <img src="images/events/duuniexpo.png" alt="DuuniExpo 2026">
                     </div>
-                    <h3>DuuniExpo 2026</h3>
-                    <p>The Lahti Case Club warmly welcomes you to attend DuuniExpo at LUT University - Lahti Campus, and to check us out at our booth throughout the day. This event is on 28th of January 2026 from 9:30 a.m. to 3:30 p.m.</p>
+                    <h3 data-translate="events.duuniexpo.title">DuuniExpo 2026</h3>
+                    <p data-translate="events.duuniexpo.desc">The Lahti Case Club warmly welcomes you to attend DuuniExpo at LUT University - Lahti Campus, and to check us out at our booth throughout the day. This event is on 28th of January 2026 from 9:30 a.m. to 3:30 p.m.</p>
                 </div>
                 <!--
                 <div class="competition-card">
@@ -63,7 +69,7 @@
     <!-- Calendar Section -->
     <section class="calendar-section">
         <div class="container-wide">
-            <h2 class="section-title">Calendar</h2>
+            <h2 class="section-title" data-translate="calendar.title">Calendar</h2>
             <div class="calendar-container">
                 <div class="calendar-header">
                     <button id="prevMonth" class="calendar-nav">‹</button>
@@ -71,17 +77,17 @@
                     <button id="nextMonth" class="calendar-nav">›</button>
                 </div>
                 <div class="calendar-days">
-                    <div class="day-name">Mon</div>
-                    <div class="day-name">Tue</div>
-                    <div class="day-name">Wed</div>
-                    <div class="day-name">Thu</div>
-                    <div class="day-name">Fri</div>
-                    <div class="day-name">Sat</div>
-                    <div class="day-name">Sun</div>
+                    <div class="day-name" data-translate="calendar.days.0">Mon</div>
+                    <div class="day-name" data-translate="calendar.days.1">Tue</div>
+                    <div class="day-name" data-translate="calendar.days.2">Wed</div>
+                    <div class="day-name" data-translate="calendar.days.3">Thu</div>
+                    <div class="day-name" data-translate="calendar.days.4">Fri</div>
+                    <div class="day-name" data-translate="calendar.days.5">Sat</div>
+                    <div class="day-name" data-translate="calendar.days.6">Sun</div>
                 </div>
                 <div id="calendarDates" class="calendar-dates"></div>
                 <div class="calendar-events">
-                    <h4>Upcoming Events</h4>
+                    <h4 data-translate="calendar.upcoming">Upcoming Events</h4>
                     <div id="eventsList" class="events-list"></div>
                 </div>
             </div>
@@ -98,24 +104,24 @@
                     </a>
                 </div>
                 <div class="footer-links">
-                    <h4>Useful links</h4>
+                    <h4 data-translate="footer.links">Useful links</h4>
                     <ul>
-                        <li><a href="about">About Us</a></li>
-                        <li><a href="events">Events</a></li>
-                        <li><a href="contact">Contact</a></li>
-                        <li><a href="#" onclick="openPartnersPopup(event); return false;">Partners</a></li>
+                        <li><a href="about.html" data-translate="footer.aboutus">About Us</a></li>
+                        <li><a href="events.html" data-translate="footer.events">Events</a></li>
+                        <li><a href="contact.html" data-translate="footer.contact">Contact</a></li>
+                        <li><a href="#" onclick="openPartnersPopup(event); return false;" data-translate="footer.partners">Partners</a></li>
                     </ul>
                 </div>
                 <div class="footer-info">
-                    <h4>LAB Case Club</h4>
-                    <p>Mukkulankatu 19, 15210 Lahti</p>
+                    <h4 data-translate="footer.info">LAB Case Club</h4>
+                    <p data-translate="footer.address">Mukkulankatu 19, 15210 Lahti</p>
                     <div class="footer-map">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1937.9425346635!2d25.661447!3d60.982586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x468e4e5c8c6c6c6d%3A0x8c6c6c6c6c6c6c6c!2sMukkulankatu%2019%2C%2015210%20Lahti!5e0!3m2!1sen!2sfi!4v1234567890" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
                 <div class="footer-legal">
-                    <h4>Terms and Conditions</h4>
-                    <p><a href="#" onclick="openPrivacyPopup(event); return false;">Privacy Policy</a></p>
+                    <h4 data-translate="footer.legal">Terms and Conditions</h4>
+                    <p><a href="#" onclick="openPrivacyPopup(event); return false;" data-translate="footer.privacy">Privacy Policy</a></p>
                     <div class="footer-social">
                         <a href="https://www.instagram.com/cernocaseclub/" target="_blank" aria-label="Instagram">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
@@ -132,7 +138,7 @@
                     </div>
                 </div>
                 <div class="footer-copyright">
-                    <p>© 2026 LAB Case Club. All rights reserved.</p>
+                    <p data-translate="footer.copyright">© 2026 LAB Case Club. All rights reserved.</p>
                 </div>
             </div>
         </div>
@@ -141,19 +147,19 @@
     <div id="privacyPopup" class="popup-overlay">
         <div class="popup-content">
             <button class="popup-close" onclick="closeInfoPopup()">×</button>
-            <h3>Privacy Policy</h3>
-            <p>Introduction: LAB Case Club ("we", "us", "our") is committed to protecting the privacy of visitors to our website. This policy explains what personal information we collect, why we collect it, how we use it, and your rights.</p>
-            <h3>Information We Collect</h3>
-            <p>We collect personal data that you voluntarily provide when you contact us using the contact forms on this site: typically your name, email address, and message content. We may also process basic technical information automatically (e.g., browser type, device, IP address) for site operation and security.</p>
-            <h3>How We Use Your Data</h3>
-            <p>We use submitted contact details to respond to enquiries, coordinate events, and manage partnerships. We do not use personal data for marketing unless you explicitly opt in. Technical data may be used to improve website performance and security.</p>
-            <h3>Third Parties</h3>
-            <p>We use EmailJS to deliver contact-form messages. Please review EmailJS's privacy documentation for details on their processing. This site also embeds Google Maps for location display; Google may collect information according to their privacy policy.</p>
-            <h3>Retention and Security</h3>
-            <p>We retain submissions only as long as necessary to fulfil the purpose for which they were submitted or as required by law. We take reasonable technical and organisational measures to protect your information, but cannot guarantee absolute security for data transmitted over the internet.</p>
-            <h3>Your Rights</h3>
-            <p>You have the right to access, correct, or request deletion of your personal data held by us. To exercise these rights, please <a href="contact">contact us</a>. We will respond to verified requests within a reasonable timeframe.</p>
-            <p>Contact: For privacy questions, please reach out via our <a href="contact">contact page</a>.</p>
+            <h3 data-translate="privacy.title">Privacy Policy</h3>
+            <p data-translate="privacy.intro">Introduction: LAB Case Club ("we", "us", "our") is committed to protecting the privacy of visitors to our website. This policy explains what personal information we collect, why we collect it, how we use it, and your rights.</p>
+            <h3 data-translate="privacy.collect.title">Information We Collect</h3>
+            <p data-translate="privacy.collect.text">We collect personal data that you voluntarily provide when you contact us using the contact forms on this site: typically your name, email address, and message content. We may also process basic technical information automatically (e.g., browser type, device, IP address) for site operation and security.</p>
+            <h3 data-translate="privacy.use.title">How We Use Your Data</h3>
+            <p data-translate="privacy.use.text">We use submitted contact details to respond to enquiries, coordinate events, and manage partnerships. We do not use personal data for marketing unless you explicitly opt in. Technical data may be used to improve website performance and security.</p>
+            <h3 data-translate="privacy.thirdparty.title">Third Parties</h3>
+            <p data-translate="privacy.thirdparty.text">We use EmailJS to deliver contact-form messages. Please review EmailJS's privacy documentation for details on their processing. This site also embeds Google Maps for location display; Google may collect information according to their privacy policy.</p>
+            <h3 data-translate="privacy.retention.title">Retention and Security</h3>
+            <p data-translate="privacy.retention.text">We retain submissions only as long as necessary to fulfil the purpose for which they were submitted or as required by law. We take reasonable technical and organisational measures to protect your information, but cannot guarantee absolute security for data transmitted over the internet.</p>
+            <h3 data-translate="privacy.rights.title">Your Rights</h3>
+            <p data-translate="privacy.rights.text">You have the right to access, correct, or request deletion of your personal data held by us. To exercise these rights, please <a href="contact.html">contact us</a>. We will respond to verified requests within a reasonable timeframe.</p>
+            <p data-translate="privacy.contact">Contact: For privacy questions, please reach out via our <a href="contact.html">contact page</a>.</p>
         </div>
     </div>
 
@@ -162,15 +168,15 @@
     <div id="partnersPopup" class="popup-overlay">
         <div class="popup-content">
             <button class="popup-close" onclick="closeInfoPopup()">×</button>
-            <h3>Sponsorship & Partners</h3>
-            <p><strong>Overview:</strong> LAB Case Club welcomes collaboration with organisations interested in supporting student learning, events, and career connections. We are open to establishing partnerships that provide mutual value for students and organisations.</p>
-            <h3>Partnership Opportunities</h3>
-            <p>Sponsorship options include event support, case cooperation, branded merchandise (hoodies, mugs, pens), recruitment sessions, and workshop collaborations. Partners gain visibility through our events, website, and social channels.</p>
-            <h3>How We Work With Partners</h3>
-            <p>We tailor partnership packages to match your organisation's goals and timelines. Packages typically include logo placement, speaking opportunities, recruitment access, and co-branded materials depending on the level of support.</p>
-            <h3>Partners</h3>
-            <p>Current partners are listed on our homepage when agreements are active. If none are shown, we are actively seeking collaborations.</p>
-            <p><strong>Interested?</strong> Please <a href="contact">contact us</a> to request a partnership proposal or discuss tailored options.</p>
+            <h3 data-translate="partners.title">Sponsorship & Partners</h3>
+            <p data-translate="partners.overview">Overview: LAB Case Club welcomes collaboration with organisations interested in supporting student learning, events, and career connections. We are open to establishing partnerships that provide mutual value for students and organisations.</p>
+            <h3 data-translate="partners.opportunities.title">Partnership Opportunities</h3>
+            <p data-translate="partners.opportunities.text">Sponsorship options include event support, case cooperation, branded merchandise (hoodies, mugs, pens), recruitment sessions, and workshop collaborations. Partners gain visibility through our events, website, and social channels.</p>
+            <h3 data-translate="partners.work.title">How We Work With Partners</h3>
+            <p data-translate="partners.work.text">We tailor partnership packages to match your organisation's goals and timelines. Packages typically include logo placement, speaking opportunities, recruitment access, and co-branded materials depending on the level of support.</p>
+            <h3 data-translate="partners.current.title">Partners</h3>
+            <p data-translate="partners.current.text">Current partners are listed on our homepage when agreements are active. If none are shown, we are actively seeking collaborations.</p>
+            <p data-translate="partners.interested">Interested? Please <a href="contact.html">contact us</a> to request a partnership proposal or discuss tailored options.</p>
         </div>
     </div>
 </body>

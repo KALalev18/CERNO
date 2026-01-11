@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (phoneInput.value.trim() !== '') {
                 const phonePattern = /^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,9}$/;
                 if (!phonePattern.test(phoneInput.value.trim())) {
-                    statusEl.textContent = 'Please enter a valid phone number (e.g., +358 40 123 4567 or 040-123-4567)';
+                    statusEl.textContent = translate('form.error.phone');
                     statusEl.className = 'form-status error';
                     phoneInput.focus();
                     return;
@@ -88,14 +88,14 @@ document.addEventListener('DOMContentLoaded', function() {
             // Check if emailjs is loaded
             if (typeof emailjs === 'undefined') {
                 console.error('EmailJS not loaded!');
-                statusEl.textContent = 'Email service not loaded. Please refresh the page.';
+                statusEl.textContent = translate('form.error.emailjs');
                 statusEl.className = 'form-status error';
                 return;
             }
             
             // Disable button and show loading
             submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
+            submitBtn.textContent = translate('form.sending');
             statusEl.textContent = '';
             statusEl.className = 'form-status';
             
@@ -105,18 +105,18 @@ document.addEventListener('DOMContentLoaded', function() {
             emailjs.sendForm('service_uljurbn', 'template_3xnw4wd', this)
                 .then(function(response) {
                     console.log('SUCCESS!', response.status, response.text);
-                    statusEl.textContent = 'Thank you for your submission! We will get back to you soon. You can close this window.';
+                    statusEl.textContent = translate('form.success');
                     statusEl.className = 'form-status success';
                     businessForm.reset();
                     // Don't auto-close - let user close manually after reading the message
                 }, function(error) {
                     console.error('FAILED...', error);
-                    statusEl.textContent = 'Failed to send message: ' + (error.text || error.message || 'Unknown error');
+                    statusEl.textContent = translate('form.error.failed') + ': ' + (error.text || error.message || translate('form.error.unknown'));
                     statusEl.className = 'form-status error';
                 })
                 .finally(function() {
                     submitBtn.disabled = false;
-                    submitBtn.textContent = 'Contact us';
+                    submitBtn.textContent = translate('nav.contact');
                 });
         });
     }
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (phoneInput.value.trim() !== '') {
                 const phonePattern = /^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,9}$/;
                 if (!phonePattern.test(phoneInput.value.trim())) {
-                    statusEl.textContent = 'Please enter a valid phone number (e.g., +358 40 123 4567 or 040-123-4567)';
+                    statusEl.textContent = translate('form.error.phone');
                     statusEl.className = 'form-status error';
                     phoneInput.focus();
                     return;
@@ -144,14 +144,14 @@ document.addEventListener('DOMContentLoaded', function() {
             // Check if emailjs is loaded
             if (typeof emailjs === 'undefined') {
                 console.error('EmailJS not loaded!');
-                statusEl.textContent = 'Email service not loaded. Please refresh the page.';
+                statusEl.textContent = translate('form.error.emailjs');
                 statusEl.className = 'form-status error';
                 return;
             }
             
             // Disable button and show loading
             submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
+            submitBtn.textContent = translate('form.sending');
             statusEl.textContent = '';
             statusEl.className = 'form-status';
             
@@ -161,18 +161,18 @@ document.addEventListener('DOMContentLoaded', function() {
             emailjs.sendForm('service_uljurbn', 'template_3xnw4wd', this)
                 .then(function(response) {
                     console.log('SUCCESS!', response.status, response.text);
-                    statusEl.textContent = 'Thank you for your submission! We will get back to you soon. You can close this window.';
+                    statusEl.textContent = translate('form.success');
                     statusEl.className = 'form-status success';
                     studentForm.reset();
                     // Don't auto-close - let user close manually after reading the message
                 }, function(error) {
                     console.error('FAILED...', error);
-                    statusEl.textContent = 'Failed to send message: ' + (error.text || error.message || 'Unknown error');
+                    statusEl.textContent = translate('form.error.failed') + ': ' + (error.text || error.message || translate('form.error.unknown'));
                     statusEl.className = 'form-status error';
                 })
                 .finally(function() {
                     submitBtn.disabled = false;
-                    submitBtn.textContent = 'Contact us';
+                    submitBtn.textContent = translate('nav.contact');
                 });
         });
     }
@@ -297,8 +297,9 @@ function renderCalendar() {
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth();
     
-    const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
-                        'July', 'August', 'September', 'October', 'November', 'December'];
+    // Get translated month names based on current language
+    const currentLang = localStorage.getItem('language') || 'en';
+    const monthNames = translations[currentLang]['calendar.months'];
     
     currentMonthEl.textContent = `${monthNames[month]} ${year}`;
 
@@ -371,8 +372,11 @@ function renderEventsList() {
     const upcomingEvents = events.filter(event => event.date >= today)
                                  .sort((a, b) => a.date - b.date);
 
+    const currentLang = localStorage.getItem('language') || 'en';
+    const noEventsText = translations[currentLang]['calendar.noevents'];
+
     if (upcomingEvents.length === 0) {
-        eventsList.innerHTML = '<p style="color: #666;">No upcoming events</p>';
+        eventsList.innerHTML = `<p style="color: #666;">${noEventsText}</p>`;
         return;
     }
 

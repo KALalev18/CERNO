@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - LAB Case Club - CERNO</title>
+    <title data-translate="contact.title">Contact Us - LAB Case Club - CERNO</title>
     <link rel="stylesheet" href="css/styles.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
@@ -11,6 +11,7 @@
             emailjs.init("QPOyQkYyBVuGXVcQv"); // Replace with your EmailJS public key
         })();
     </script>
+    <script src="js/translations.js"></script>
     <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -23,12 +24,17 @@
                 </a>
             </div>
             <ul class="nav-menu">
-                <li><a href="about">About</a></li>
-                <li><a href="events">Events</a></li>
-                <li><a href="resources">Resources</a></li>
-                <li><a href="faq">FAQ</a></li>
+                <li><a href="about.html" data-translate="nav.about">About</a></li>
+                <li><a href="events.html" data-translate="nav.events">Events</a></li>
+                <li><a href="resources.html" data-translate="nav.resources">Resources</a></li>
+                <li><a href="faq.html" data-translate="nav.faq">FAQ</a></li>
             </ul>
-            <a href="contact" class="contact-btn active">Contact us</a>
+            <div class="language-switcher">
+                <button class="lang-btn" data-lang="fi" onclick="setLanguage('fi')">FI</button>
+                <span class="lang-separator">/</span>
+                <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+            </div>
+            <a href="contact.html" class="contact-btn active" data-translate="nav.contact">Contact us</a>
         </div>
     </nav>
 
@@ -38,15 +44,15 @@
             <source src="images/videos/Business_Collaboration_Stock_Video_Generated.mp4" type="video/mp4">
         </video>
         <div class="cta-content">
-            <h1>Do you want to establish a business collaboration?</h1>
-            <a href="#" class="cta-btn" onclick="openBusinessForm(event)">Join us</a>
+            <h1 data-translate="contact.business.title">Do you want to establish a business collaboration?</h1>
+            <a href="#" class="cta-btn" onclick="openBusinessForm(event)" data-translate="contact.business.btn">Join us</a>
         </div>
     </section>
 
     <!-- Divider -->
     <div class="contact-divider">
         <div class="divider-line"></div>
-        <div class="divider-text">OR</div>
+        <div class="divider-text" data-translate="contact.divider">OR</div>
         <div class="divider-line"></div>
     </div>
 
@@ -56,8 +62,8 @@
             <source src="images/videos/Business_Case_Club_Video_Generation.mp4" type="video/mp4">
         </video>
         <div class="cta-content">
-            <h1>Are you a motivated student?</h1>
-            <a href="#" class="cta-btn" onclick="openStudentForm(event)">Contact us</a>
+            <h1 data-translate="contact.student.title">Are you a motivated student?</h1>
+            <a href="#" class="cta-btn" onclick="openStudentForm(event)" data-translate="contact.student.btn">Contact us</a>
         </div>
     </section>
 
@@ -65,26 +71,26 @@
     <div id="businessFormPopup" class="popup-overlay">
         <div class="popup-content">
             <button class="popup-close" onclick="closeContactForm()">&times;</button>
-            <h2>Contact form</h2>
+            <h2 data-translate="form.title">Contact form</h2>
             <form class="contact-form" id="businessForm">
                 <input type="hidden" name="form_type" value="business">
                 <div class="form-group">
-                    <label for="businessFullName">Full Name: (required)</label>
+                    <label for="businessFullName"><span data-translate="form.fullname">Full Name:</span> <span data-translate="form.required">(required)</span></label>
                     <input type="text" id="businessFullName" name="from_name" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="businessCompany">Company / Organization:</label>
+                    <label for="businessCompany" data-translate="form.company">Company / Organization:</label>
                     <input type="text" id="businessCompany" name="company" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="businessEmail">Email Address: (required)</label>
+                    <label for="businessEmail"><span data-translate="form.email">Email:</span> <span data-translate="form.required">(required)</span></label>
                     <input type="email" id="businessEmail" name="reply_to" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="businessPhone">Phone Number:</label>
+                    <label for="businessPhone"><span data-translate="form.phone">Phone Number:</span> <span data-translate="form.optional">(optional)</span></label>
                     <input type="tel" id="businessPhone" name="phone">
                 </div>
                 
@@ -94,11 +100,11 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="businessMessage">Message / Collaboration Inquiry:</label>
+                    <label for="businessMessage" data-translate="form.message">Message:</label>
                     <textarea id="businessMessage" name="message" rows="5"></textarea>
                 </div>
                 
-                <button type="submit" class="form-submit-btn">Contact us</button>
+                <button type="submit" class="form-submit-btn" data-translate="form.send">Send Message</button>
                 <div class="form-status" id="businessFormStatus"></div>
             </form>
         </div>
@@ -108,30 +114,30 @@
     <div id="studentFormPopup" class="popup-overlay">
         <div class="popup-content">
             <button class="popup-close" onclick="closeContactForm()">&times;</button>
-            <h2>Contact form</h2>
+            <h2 data-translate="form.title">Contact form</h2>
             <form class="contact-form" id="studentForm">
                 <input type="hidden" name="form_type" value="student">
                 <div class="form-group">
-                    <label for="studentFullName">Full Name: (required)</label>
+                    <label for="studentFullName"><span data-translate="form.fullname">Full Name:</span> <span data-translate="form.required">(required)</span></label>
                     <input type="text" id="studentFullName" name="from_name" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="studentEmail">Email Address: (required)</label>
+                    <label for="studentEmail"><span data-translate="form.email">Email:</span> <span data-translate="form.required">(required)</span></label>
                     <input type="email" id="studentEmail" name="reply_to" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="studentPhone">Phone Number:</label>
+                    <label for="studentPhone"><span data-translate="form.phone">Phone Number:</span> <span data-translate="form.optional">(optional)</span></label>
                     <input type="tel" id="studentPhone" name="phone">
                 </div>
                 
                 <div class="form-group">
-                    <label for="studentMessage">Message / Collaboration Inquiry:</label>
+                    <label for="studentMessage" data-translate="form.message">Message:</label>
                     <textarea id="studentMessage" name="message" rows="5"></textarea>
                 </div>
                 
-                <button type="submit" class="form-submit-btn">Contact us</button>
+                <button type="submit" class="form-submit-btn" data-translate="form.send">Send Message</button>
                 <div class="form-status" id="studentFormStatus"></div>
             </form>
         </div>
@@ -147,24 +153,24 @@
                     </a>
                 </div>
                 <div class="footer-links">
-                    <h4>Useful links</h4>
+                    <h4 data-translate="footer.links">Useful links</h4>
                     <ul>
-                        <li><a href="about">About Us</a></li>
-                        <li><a href="events">Events</a></li>
-                        <li><a href="contact">Contact</a></li>
-                        <li><a href="#" onclick="openPartnersPopup(event); return false;">Partners</a></li>
+                        <li><a href="about.html" data-translate="footer.aboutus">About Us</a></li>
+                        <li><a href="events.html" data-translate="footer.events">Events</a></li>
+                        <li><a href="contact.html" data-translate="footer.contact">Contact</a></li>
+                        <li><a href="#" onclick="openPartnersPopup(event); return false;" data-translate="footer.partners">Partners</a></li>
                     </ul>
                 </div>
                 <div class="footer-info">
-                    <h4>LAB Case Club</h4>
-                    <p>Mukkulankatu 19, 15210 Lahti</p>
+                    <h4 data-translate="footer.info">LAB Case Club</h4>
+                    <p data-translate="footer.address">Mukkulankatu 19, 15210 Lahti</p>
                     <div class="footer-map">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1937.9425346635!2d25.661447!3d60.982586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x468e4e5c8c6c6c6d%3A0x8c6c6c6c6c6c6c6c!2sMukkulankatu%2019%2C%2015210%20Lahti!5e0!3m2!1sen!2sfi!4v1234567890" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
                 <div class="footer-legal">
-                    <h4>Terms and Conditions</h4>
-                    <p><a href="#" onclick="openPrivacyPopup(event); return false;">Privacy Policy</a></p>
+                    <h4 data-translate="footer.legal">Terms and Conditions</h4>
+                    <p><a href="#" onclick="openPrivacyPopup(event); return false;" data-translate="footer.privacy">Privacy Policy</a></p>
                     <div class="footer-social">
                         <a href="https://www.instagram.com/cernocaseclub/" target="_blank" aria-label="Instagram">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
@@ -181,7 +187,7 @@
                     </div>
                 </div>
                 <div class="footer-copyright">
-                    <p>© 2026 LAB Case Club. All rights reserved.</p>
+                    <p data-translate="footer.copyright">© 2026 LAB Case Club. All rights reserved.</p>
                 </div>
             </div>
         </div>
@@ -190,19 +196,19 @@
     <div id="privacyPopup" class="popup-overlay">
         <div class="popup-content">
             <button class="popup-close" onclick="closeInfoPopup()">×</button>
-            <h3>Privacy Policy</h3>
-            <p>Introduction: LAB Case Club ("we", "us", "our") is committed to protecting the privacy of visitors to our website. This policy explains what personal information we collect, why we collect it, how we use it, and your rights.</p>
-            <h3>Information We Collect</h3>
-            <p>We collect personal data that you voluntarily provide when you contact us using the contact forms on this site: typically your name, email address, and message content. We may also process basic technical information automatically (e.g., browser type, device, IP address) for site operation and security.</p>
-            <h3>How We Use Your Data</h3>
-            <p>We use submitted contact details to respond to enquiries, coordinate events, and manage partnerships. We do not use personal data for marketing unless you explicitly opt in. Technical data may be used to improve website performance and security.</p>
-            <h3>Third Parties</h3>
-            <p>We use EmailJS to deliver contact-form messages. Please review EmailJS's privacy documentation for details on their processing. This site also embeds Google Maps for location display; Google may collect information according to their privacy policy.</p>
-            <h3>Retention and Security</h3>
-            <p>We retain submissions only as long as necessary to fulfil the purpose for which they were submitted or as required by law. We take reasonable technical and organisational measures to protect your information, but cannot guarantee absolute security for data transmitted over the internet.</p>
-            <h3>Your Rights</h3>
-            <p>You have the right to access, correct, or request deletion of your personal data held by us. To exercise these rights, please <a href="contact">contact us</a>. We will respond to verified requests within a reasonable timeframe.</p>
-            <p>Contact: For privacy questions, please reach out via our <a href="contact">contact page</a>.</p>
+            <h3 data-translate="privacy.title">Privacy Policy</h3>
+            <p data-translate="privacy.intro">Introduction: LAB Case Club ("we", "us", "our") is committed to protecting the privacy of visitors to our website. This policy explains what personal information we collect, why we collect it, how we use it, and your rights.</p>
+            <h3 data-translate="privacy.collect.title">Information We Collect</h3>
+            <p data-translate="privacy.collect.text">We collect personal data that you voluntarily provide when you contact us using the contact forms on this site: typically your name, email address, and message content. We may also process basic technical information automatically (e.g., browser type, device, IP address) for site operation and security.</p>
+            <h3 data-translate="privacy.use.title">How We Use Your Data</h3>
+            <p data-translate="privacy.use.text">We use submitted contact details to respond to enquiries, coordinate events, and manage partnerships. We do not use personal data for marketing unless you explicitly opt in. Technical data may be used to improve website performance and security.</p>
+            <h3 data-translate="privacy.thirdparty.title">Third Parties</h3>
+            <p data-translate="privacy.thirdparty.text">We use EmailJS to deliver contact-form messages. Please review EmailJS's privacy documentation for details on their processing. This site also embeds Google Maps for location display; Google may collect information according to their privacy policy.</p>
+            <h3 data-translate="privacy.retention.title">Retention and Security</h3>
+            <p data-translate="privacy.retention.text">We retain submissions only as long as necessary to fulfil the purpose for which they were submitted or as required by law. We take reasonable technical and organisational measures to protect your information, but cannot guarantee absolute security for data transmitted over the internet.</p>
+            <h3 data-translate="privacy.rights.title">Your Rights</h3>
+            <p data-translate="privacy.rights.text">You have the right to access, correct, or request deletion of your personal data held by us. To exercise these rights, please <a href="contact.html">contact us</a>. We will respond to verified requests within a reasonable timeframe.</p>
+            <p data-translate="privacy.contact">Contact: For privacy questions, please reach out via our <a href="contact.html">contact page</a>.</p>
         </div>
     </div>
 
@@ -211,15 +217,15 @@
     <div id="partnersPopup" class="popup-overlay">
         <div class="popup-content">
             <button class="popup-close" onclick="closeInfoPopup()">×</button>
-            <h3>Sponsorship & Partners</h3>
-            <p><strong>Overview:</strong> LAB Case Club welcomes collaboration with organisations interested in supporting student learning, events, and career connections. We are open to establishing partnerships that provide mutual value for students and organisations.</p>
-            <h3>Partnership Opportunities</h3>
-            <p>Sponsorship options include event support, case cooperation, branded merchandise (hoodies, mugs, pens), recruitment sessions, and workshop collaborations. Partners gain visibility through our events, website, and social channels.</p>
-            <h3>How We Work With Partners</h3>
-            <p>We tailor partnership packages to match your organisation's goals and timelines. Packages typically include logo placement, speaking opportunities, recruitment access, and co-branded materials depending on the level of support.</p>
-            <h3>Partners</h3>
-            <p>Current partners are listed on our homepage when agreements are active. If none are shown, we are actively seeking collaborations.</p>
-            <p><strong>Interested?</strong> Please <a href="contact">contact us</a> to request a partnership proposal or discuss tailored options.</p>
+            <h3 data-translate="partners.title">Sponsorship & Partners</h3>
+            <p data-translate="partners.overview">Overview: LAB Case Club welcomes collaboration with organisations interested in supporting student learning, events, and career connections. We are open to establishing partnerships that provide mutual value for students and organisations.</p>
+            <h3 data-translate="partners.opportunities.title">Partnership Opportunities</h3>
+            <p data-translate="partners.opportunities.text">Sponsorship options include event support, case cooperation, branded merchandise (hoodies, mugs, pens), recruitment sessions, and workshop collaborations. Partners gain visibility through our events, website, and social channels.</p>
+            <h3 data-translate="partners.work.title">How We Work With Partners</h3>
+            <p data-translate="partners.work.text">We tailor partnership packages to match your organisation's goals and timelines. Packages typically include logo placement, speaking opportunities, recruitment access, and co-branded materials depending on the level of support.</p>
+            <h3 data-translate="partners.current.title">Partners</h3>
+            <p data-translate="partners.current.text">Current partners are listed on our homepage when agreements are active. If none are shown, we are actively seeking collaborations.</p>
+            <p data-translate="partners.interested">Interested? Please <a href="contact.html">contact us</a> to request a partnership proposal or discuss tailored options.</p>
         </div>
     </div>
 </body>
