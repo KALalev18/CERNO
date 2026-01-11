@@ -1,13 +1,41 @@
 // Main JavaScript file for CERNO Website
 
-// Mobile menu toggle (if needed in the future)
+// Mobile menu toggle
 document.addEventListener('DOMContentLoaded', function() {
     console.log('CERNO Website loaded successfully');
     
-    // Smooth scrolling for navigation links
-    const navLinks = document.querySelectorAll('.nav-menu a');
+    // Mobile menu functionality
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const contactBtn = document.querySelector('.contact-btn');
     
-    navLinks.forEach(link => {
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            contactBtn.classList.toggle('mobile-show');
+            
+            // Change icon
+            const icon = this.textContent;
+            this.textContent = icon === '☰' ? '✕' : '☰';
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 968) {
+                    navMenu.classList.remove('active');
+                    contactBtn.classList.remove('mobile-show');
+                    mobileMenuToggle.textContent = '☰';
+                }
+            });
+        });
+    }
+    
+    // Smooth scrolling for navigation links
+    const allNavLinks = document.querySelectorAll('.nav-menu a');
+    
+    allNavLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             if (href.startsWith('#')) {
