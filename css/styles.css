@@ -863,6 +863,34 @@ body {
     text-decoration: underline;
 }
 
+.partner-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.partner-logo-link {
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    text-decoration: none !important;
+}
+
+.partner-logo-link:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+.partner-logo {
+    max-width: 150px;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
 .contact-form {
     display: flex;
     flex-direction: column;
