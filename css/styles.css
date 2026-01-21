@@ -1484,7 +1484,15 @@ body {
     
     .section-title {
         font-size: 28px;
-        margin-bottom: 25px;
+        margin-bottom: 30px;
+    }
+    
+    .competitions-section {
+        padding: 40px 0 50px;
+    }
+    
+    .calendar-section {
+        padding: 40px 0 50px;
     }
     
     .team-grid {
@@ -1494,7 +1502,19 @@ body {
     
     .competitions-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+    
+    .competition-card h3 {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+    
+    .competition-card p {
+        font-size: 15px;
+        line-height: 1.6;
+        padding: 0 10px;
     }
     
     .resources-grid {
@@ -1588,6 +1608,21 @@ body {
         height: 200px;
     }
     
+    /* Sponsor logos - stack vertically on mobile */
+    .sponsor-logos {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .sponsor-logo {
+        height: 150px;
+        max-width: 280px;
+    }
+    
+    .sponsors-thanks {
+        font-size: 14px;
+    }
+    
     /* Popup improvements */
     .popup-content {
         width: 95%;
@@ -1615,13 +1650,65 @@ body {
     }
     
     /* Calendar improvements */
+    .calendar-container {
+        margin: 0 -15px;
+        border-radius: 0;
+    }
+    
+    .calendar-header {
+        padding: 15px;
+    }
+    
+    .calendar-header h3 {
+        font-size: 16px;
+    }
+    
+    .calendar-nav {
+        font-size: 24px;
+        padding: 5px 10px;
+    }
+    
+    .calendar-days {
+        padding: 0;
+    }
+    
+    .day-name {
+        padding: 8px 4px;
+        font-size: 12px;
+    }
+    
     .calendar-date {
-        height: 45px;
-        font-size: 14px;
+        min-height: 50px;
+        padding: 8px 4px;
+        font-size: 12px;
+    }
+    
+    .calendar-date .date-number {
+        font-size: 12px;
+    }
+    
+    .calendar-events {
+        padding: 15px;
+    }
+    
+    .calendar-events h4 {
+        font-size: 16px;
     }
     
     .event-item {
         padding: 12px;
+    }
+    
+    .event-item .event-title {
+        font-size: 14px;
+    }
+    
+    .event-item .event-date {
+        font-size: 11px;
+    }
+    
+    .event-item .event-time {
+        font-size: 12px;
     }
     
     /* FAQ improvements */
@@ -1643,6 +1730,15 @@ body {
     
     .section-title {
         font-size: 24px;
+        margin-bottom: 25px;
+    }
+    
+    .competitions-section {
+        padding: 30px 0 40px;
+    }
+    
+    .calendar-section {
+        padding: 30px 0 40px;
     }
     
     .cta-content h1 {
@@ -1655,5 +1751,36 @@ body {
     
     .resource-info h3 {
         font-size: 18px;
+    }
+    
+    .competition-card h3 {
+        font-size: 18px;
+    }
+    
+    .competition-card p {
+        font-size: 14px;
+    }
+    
+    .calendar-header h3 {
+        font-size: 14px;
+    }
+    
+    .calendar-nav {
+        font-size: 20px;
+    }
+    
+    .day-name {
+        font-size: 11px;
+        padding: 6px 2px;
+    }
+    
+    .calendar-date {
+        min-height: 45px;
+        padding: 6px 2px;
+        font-size: 11px;
+    }
+    
+    .calendar-date .date-number {
+        font-size: 11px;
     }
 }
