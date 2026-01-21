@@ -21,6 +21,7 @@ const translations = {
         'footer.legal': 'Terms and Conditions',
         'footer.privacy': 'Privacy Policy',
         'footer.copyright': '© 2026 LAB Case Club. All rights reserved.',
+        'footer.sponsors.thanks': 'A warm thanks to the first sponsors supporting our launch.',
         
         // Homepage
         'home.title': 'LAB Case Club - CERNO',
@@ -161,6 +162,7 @@ const translations = {
         'footer.legal': 'Käyttöehdot',
         'footer.privacy': 'Tietosuojakäytäntö',
         'footer.copyright': '© 2026 LAB Case Club. Kaikki oikeudet pidätetään.',
+        'footer.sponsors.thanks': 'Lämpimät kiitokset ensimmäisille sponsoreille, jotka tukevat toimintaamme.',
         
         // Homepage
         'home.title': 'LAB Case Club - CERNO',
