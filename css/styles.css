@@ -526,7 +526,8 @@ body {
 }
 
 .calendar-container {
-    max-width: 900px;
+    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
     background-color: white;
     border: 1px solid #e0e0e0;
@@ -572,10 +573,10 @@ body {
 }
 
 .day-name {
-    padding: 12px;
+    padding: 16px;
     text-align: center;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 16px;
     color: #333;
 }
 
@@ -589,8 +590,8 @@ body {
 
 .calendar-date {
     background-color: white;
-    padding: 12px;
-    min-height: 80px;
+    padding: 20px;
+    min-height: 120px;
     position: relative;
     cursor: pointer;
     transition: background-color 0.2s;
@@ -619,7 +620,7 @@ body {
 }
 
 .calendar-date .date-number {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 500;
     margin-bottom: 4px;
 }
