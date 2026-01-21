@@ -1315,7 +1315,7 @@ body {
     max-width: 400px;
     width: auto;
     object-fit: contain;
-    background-color: #000;
+    background-color: transparent;
     padding: 10px;
     mix-blend-mode: screen;
     display: block;
@@ -1323,9 +1323,10 @@ body {
 
 .sponsors-thanks {
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.6;
     opacity: 0.9;
     font-style: italic;
+    max-width: 100%;
 }
 
 /* Responsive Design */
@@ -1676,7 +1677,7 @@ body {
     
     /* Sponsor logos - stack vertically on mobile */
     .footer-sponsors {
-        padding: 15px 20px;
+        padding: 20px 15px;
         margin-top: 10px;
         width: 100%;
         max-width: 100%;
@@ -1686,8 +1687,8 @@ body {
     
     .sponsor-logos {
         flex-direction: column;
-        gap: 15px;
-        margin-bottom: 15px;
+        gap: 20px;
+        margin-bottom: 20px;
         width: 100%;
         max-width: 100%;
         align-items: center;
@@ -1695,25 +1696,33 @@ body {
     
     .sponsor-logos a {
         width: 100%;
-        max-width: 180px;
+        max-width: 250px;
         display: flex;
         justify-content: center;
         align-items: center;
+        background-color: transparent;
     }
     
     .sponsor-logo {
-        height: 80px;
+        height: 140px;
         max-width: 100%;
         width: auto;
-        padding: 5px;
+        padding: 10px;
         object-fit: contain;
+        background-color: transparent !important;
+        mix-blend-mode: normal;
+        filter: brightness(1.1);
     }
     
     .sponsors-thanks {
-        font-size: 12px;
-        padding: 0 10px;
-        line-height: 1.4;
+        font-size: 13px;
+        padding: 0 15px;
+        line-height: 1.5;
         text-align: center;
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
     }
     }
     
