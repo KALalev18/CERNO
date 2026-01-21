@@ -1239,9 +1239,10 @@ body {
 .footer-copyright {
     flex-basis: 100%;
     text-align: left;
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 20px;
+    padding-top: 0;
+    padding-bottom: 5px;
+    border-top: none;
 }
 
 .footer-copyright p {
@@ -1271,6 +1272,56 @@ body {
 
 .footer-social a:hover {
     background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-sponsors {
+    flex-basis: 100%;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-copyright-text {
+    font-size: 12px;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+.sponsor-logos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 20px;
+}
+
+.sponsor-logos a {
+    display: inline-block;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.sponsor-logos a:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+.sponsor-logo {
+    height: 220px;
+    max-width: 400px;
+    width: auto;
+    object-fit: contain;
+    background-color: #000;
+    padding: 10px;
+    mix-blend-mode: screen;
+}
+
+.sponsors-thanks {
+    font-size: 16px;
+    line-height: 1.5;
+    opacity: 0.9;
+    font-style: italic;
 }
 
 /* Responsive Design */
