@@ -1294,9 +1294,9 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 60px;
+    gap: 40px;
     margin-bottom: 20px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     max-width: 100%;
 }
 
@@ -1312,8 +1312,8 @@ body {
 }
 
 .sponsor-logo {
-    height: 220px;
-    max-width: 400px;
+    height: 180px;
+    max-width: 320px;
     width: auto;
     object-fit: contain;
     background-color: transparent;
