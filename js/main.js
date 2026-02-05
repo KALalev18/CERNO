@@ -485,6 +485,11 @@ const galleries = {
         folder: 'images/albums/NCC 2025',
         images: [], // Will be populated with images from the folder
         currentIndex: 0
+    },
+    'DuuniExpo2026': {
+        folder: 'images/events/past',
+        images: [],
+        currentIndex: 0
     }
 };
 
@@ -505,6 +510,13 @@ galleries['NCC2025'].images = [
     'images/albums/NCC 2025/WhatsApp Image 2026-01-04 at 14.29.12 (2).jpeg',
     'images/albums/NCC 2025/WhatsApp Image 2026-01-04 at 14.29.12 (3).jpeg',
     'images/albums/NCC 2025/WhatsApp Image 2026-01-04 at 14.29.12.jpeg'
+];
+
+galleries['DuuniExpo2026'].images = [
+    'images/events/duuniexpo.png',
+    'images/events/past/picture1.jpeg',
+    'images/events/past/picture2.jpeg',
+    'images/events/past/picture 3.jpeg'
 ];
 
 function navigateGallery(event, galleryId, direction) {
@@ -534,7 +546,28 @@ function navigateGallery(event, galleryId, direction) {
     }
 }
 
-// Initialize gallery counters on page load
+// Image Modal Functions for Zoom
+function openImageModal(imageSrc) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    
+    if (modal && modalImg) {
+        modal.classList.add('active');
+        modalImg.src = imageSrc;
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+    }
+}
+
+function closeImageModal() {
+    const modal = document.getElementById('imageModal');
+    
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+}
+
+// Initialize gallery counters and image click handlers on page load
 document.addEventListener('DOMContentLoaded', function() {
     Object.keys(galleries).forEach(galleryId => {
         const gallery = galleries[galleryId];
@@ -545,6 +578,34 @@ document.addEventListener('DOMContentLoaded', function() {
             if (counter) {
                 counter.textContent = `1 / ${gallery.images.length}`;
             }
+        }
+    });
+    
+    // Add click handlers to all competition images for zoom
+    document.querySelectorAll('.competition-image img, .past-event-image img, .resource-image img').forEach(img => {
+        img.addEventListener('click', function(e) {
+            // Don't open modal if clicking on gallery navigation buttons
+            if (e.target.closest('.gallery-nav')) {
+                return;
+            }
+            openImageModal(this.src);
+        });
+    });
+    
+    // Close modal on background click
+    const modal = document.getElementById('imageModal');
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeImageModal();
+            }
+        });
+    }
+    
+    // Close modal on ESC key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeImageModal();
         }
     });
 });

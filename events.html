@@ -40,22 +40,16 @@
             <h1 class="section-title" data-translate="events.upcoming">Upcoming Events</h1>
             
             <div class="competitions-grid">
+                
+                
                 <div class="competition-card">
                     <div class="competition-image">
-                        <img src="images/events/duuniexpo.png" alt="DuuniExpo 2026">
+                        <img src="images/question_mark.png" alt="Competition 2">
                     </div>
-                    <h3 data-translate="events.duuniexpo.title">DuuniExpo 2026</h3>
-                    <p data-translate="events.duuniexpo.desc">The Lahti Case Club warmly welcomes you to attend DuuniExpo at LUT University - Lahti Campus, and to check us out at our booth throughout the day. This event is on 28th of January 2026 from 9:30 a.m. to 3:30 p.m.</p>
+                    <h3 data-translate="events.first.title">First CERNO event</h3>
+                    <p data-translate="events.first.desc">Expect soon!</p>
                 </div>
                 <!--
-                <div class="competition-card">
-                    <div class="competition-image">
-                        <img src="images/question mark.png" alt="Competition 2">
-                    </div>
-                    <h3>Name 2</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris enim magna, ullamcorper ac est sit amet, dignissim semper sem. Ut vehicula rutrum cursus.</p>
-                </div>
-                
                 <div class="competition-card">
                     <div class="competition-image">
                         <img src="images/question mark.png" alt="Competition 3">
@@ -95,6 +89,44 @@
             </div>
         </div>
     </section>
+
+    
+    <section class="competitions-section">
+        <div class="container-wide">
+            <h1 class="section-title" data-translate="events.past">Previous Events</h1>
+            
+            <div class="competitions-grid">
+                <div class="competition-card">
+                    <div class="competition-image gallery-enabled" data-gallery="DuuniExpo2026">
+                        <button class="gallery-nav gallery-prev" onclick="navigateGallery(event, 'DuuniExpo2026', -1)">‹</button>
+                        <img src="images/events/duuniexpo.png" alt="DuuniExpo 2026" class="gallery-image">
+                        <button class="gallery-nav gallery-next" onclick="navigateGallery(event, 'DuuniExpo2026', 1)">›</button>
+                        <div class="gallery-counter"></div>
+                    </div>
+                    <h3 data-translate="events.duuniexpo.title">DuuniExpo 2026</h3>
+                    <p data-translate="events.duuniexpo.pastdesc">The Lahti Case Club appeciates your positive energy during DuuniExpo at LUT University - Lahti Campus, throughout the whole day. This event was the perfect opportunity to meet all of you, and the perfect start to put CERNO on the map.</p>
+                </div>
+                <!--
+                <div class="competition-card">
+                    <div class="competition-image">
+                        <img src="images/question mark.png" alt="Competition 2">
+                    </div>
+                    <h3>Name 2</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris enim magna, ullamcorper ac est sit amet, dignissim semper sem. Ut vehicula rutrum cursus.</p>
+                </div>
+                
+                <div class="competition-card">
+                    <div class="competition-image">
+                        <img src="images/question mark.png" alt="Competition 3">
+                    </div>
+                    <h3>Name 3</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris enim magna, ullamcorper ac est sit amet, dignissim semper sem. Ut vehicula rutrum cursus.</p>
+                </div>
+                -->
+            </div>
+        </div>
+    </section>
+    
 
     <!-- Footer -->
     <footer class="footer">
@@ -195,6 +227,12 @@
             <p data-translate="partners.work.text">We tailor partnership packages to match your organisation's goals and timelines. Packages typically include logo placement, speaking opportunities, recruitment access, and co-branded materials depending on the level of support.</p>
             <p data-translate="partners.interested">Interested? Please <a href="contact">contact us</a> to request a partnership proposal or discuss tailored options.</p>
         </div>
+    </div>
+
+    <!-- Image Modal for Zoom -->
+    <div id="imageModal" class="image-modal">
+        <span class="modal-close" onclick="closeImageModal()">&times;</span>
+        <img id="modalImage" class="modal-image" src="" alt="Zoomed image">
     </div>
 </body>
 </html>
