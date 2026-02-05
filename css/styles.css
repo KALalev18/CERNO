@@ -804,13 +804,15 @@ body {
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 9999;
     overflow-y: auto;
+    overflow-x: hidden;
     padding: 20px;
 }
 
 .popup-overlay.active {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    padding: 40px 20px;
 }
 
 .popup-content {
@@ -818,10 +820,14 @@ body {
     color: #000;
     width: 100%;
     max-width: 720px;
+    max-height: calc(100vh - 80px);
     padding: 36px 40px;
     border-radius: 8px;
     position: relative;
     margin: auto;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .popup-close {
@@ -896,17 +902,25 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .form-group label {
     font-size: 14px;
     margin-bottom: 8px;
     color: #000;
+    word-wrap: break-word;
+    max-width: 100%;
 }
 
 .form-group input,
@@ -917,6 +931,9 @@ body {
     font-size: 14px;
     font-family: inherit;
     border-radius: 4px;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .form-group input:focus,
@@ -924,6 +941,16 @@ body {
     outline: none;
     border-color: #999;
     background-color: #fff;
+}
+
+.form-group input:invalid:not(:placeholder-shown),
+.form-group textarea:invalid:not(:placeholder-shown) {
+    border-color: #d32f2f;
+}
+
+.form-group input:valid:not(:placeholder-shown),
+.form-group textarea:valid:not(:placeholder-shown) {
+    border-color: #4caf50;
 }
 
 .form-group textarea {

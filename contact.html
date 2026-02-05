@@ -88,17 +88,14 @@
                 
                 <div class="form-group">
                     <label for="businessEmail"><span data-translate="form.email">Email:</span> <span data-translate="form.required">(required)</span></label>
-                    <input type="email" id="businessEmail" name="reply_to" required>
+                    <input type="email" id="businessEmail" name="reply_to" required 
+                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                           title="Please enter a valid email address (e.g., name@company.com)">
                 </div>
                 
                 <div class="form-group">
                     <label for="businessPhone"><span data-translate="form.phone">Phone Number:</span> <span data-translate="form.optional">(optional)</span></label>
                     <input type="tel" id="businessPhone" name="phone">
-                </div>
-                
-                <div class="form-group">
-                    <label for="businessSubject">Subject:</label>
-                    <input type="text" id="businessSubject" name="subject">
                 </div>
                 
                 <div class="form-group">
@@ -126,7 +123,9 @@
                 
                 <div class="form-group">
                     <label for="studentEmail"><span data-translate="form.email">Email:</span> <span data-translate="form.required">(required)</span></label>
-                    <input type="email" id="studentEmail" name="reply_to" required>
+                    <input type="email" id="studentEmail" name="reply_to" required 
+                           pattern=".*@(student\.lut\.fi|student\.lab\.fi|lut\.fi|lab\.fi)$"
+                           title="Please use your university email address ending with @student.lut.fi, @student.lab.fi, @lut.fi, or @lab.fi">
                 </div>
                 
                 <div class="form-group">

@@ -157,6 +157,19 @@ document.addEventListener('DOMContentLoaded', function() {
             const statusEl = document.getElementById('studentFormStatus');
             const submitBtn = this.querySelector('.form-submit-btn');
             const phoneInput = document.getElementById('studentPhone');
+            const emailInput = document.getElementById('studentEmail');
+            
+            // Validate email domain for student form
+            const email = emailInput.value.trim().toLowerCase();
+            const validDomains = ['@student.lut.fi', '@student.lab.fi', '@lut.fi', '@lab.fi'];
+            const hasValidDomain = validDomains.some(domain => email.endsWith(domain));
+            
+            if (!hasValidDomain) {
+                statusEl.textContent = translate('form.error.studentemail');
+                statusEl.className = 'form-status error';
+                emailInput.focus();
+                return;
+            }
             
             // Validate phone number if provided
             if (phoneInput.value.trim() !== '') {

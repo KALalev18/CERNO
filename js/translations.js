@@ -113,6 +113,7 @@ const translations = {
         // Form validation messages
         'form.error.phone': 'Please enter a valid phone number (e.g., +358 40 123 4567 or 040-123-4567)',
         'form.error.emailjs': 'Email service not loaded. Please refresh the page.',
+        'form.error.studentemail': 'Please use your university email address (@student.lut.fi, @student.lab.fi, @lut.fi, or @lab.fi)',
         'form.success': 'Thank you for your submission! We will get back to you soon. You can close this window.',
         'form.error.failed': 'Failed to send message',
         'form.error.unknown': 'Unknown error',
@@ -251,8 +252,7 @@ const translations = {
         
         // Form validation messages
         'form.error.phone': 'Anna kelvollinen puhelinnumero (esim. +358 40 123 4567 tai 040-123-4567)',
-        'form.error.emailjs': 'Sähköpostipalvelua ei ole ladattu. Päivitä sivu.',
-        'form.success': 'Kiitos viestistäsi! Otamme sinuun yhteyttä pian. Voit sulkea tämän ikkunan.',
+        'form.error.emailjs': 'Sähköpostipalvelua ei ole ladattu. Päivitä sivu.',        'form.error.studentemail': 'Käytä yliopiston sähköpostiosoitettasi (@student.lut.fi, @student.lab.fi, @lut.fi tai @lab.fi)',        'form.success': 'Kiitos viestistäsi! Otamme sinuun yhteyttä pian. Voit sulkea tämän ikkunan.',
         'form.error.failed': 'Viestin lähetys epäonnistui',
         'form.error.unknown': 'Tuntematon virhe',
         
