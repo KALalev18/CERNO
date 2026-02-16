@@ -294,6 +294,15 @@ const events = [
         endTime: '15:30',
         description: 'We warmly welcome the Lahti Case Club to attend DuuniExpo',
         location: 'Lahti'
+    },
+    {
+        id: 'cerno-intro',
+        title: 'CERNO Introductory event',
+        date: new Date(2026, 1, 16), // February 16, 2026
+        startTime: '17:00',
+        endTime: '19:00',
+        description: 'Learn more about CERNO!',
+        location: 'M19_D251'
     }
 ];
 
@@ -410,6 +419,7 @@ function renderEventsList() {
     if (!eventsList) return;
 
     const today = new Date();
+    today.setHours(0, 0, 0, 0); // Reset to start of day
     const upcomingEvents = events.filter(event => event.date >= today)
                                  .sort((a, b) => a.date - b.date);
 
@@ -433,6 +443,7 @@ function renderEventsList() {
                 <div class="event-date">${dateStr}</div>
                 <div class="event-title">${event.title}</div>
                 <div class="event-time">${event.startTime} - ${event.endTime}</div>
+                <div class="event-location">${event.location}</div>
             </div>
         `;
     }).join('');
