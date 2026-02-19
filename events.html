@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="images/logos/Cerno media black1.png">
     <link rel="stylesheet" href="css/styles.css?v=14">
     <script src="js/translations.js?v=14"></script>
-    <script src="js/main.js?v=14" defer></script>
+    <script src="js/main.js?v=15" defer></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -105,8 +105,11 @@
             <div class="competitions-grid">
 
                 <div class="competition-card">
-                    <div class="competition-image">
-                        <img src="images/logos/base tile white footer.png" alt="CERNO Introductory event">
+                    <div class="competition-image gallery-enabled" data-gallery="CERNOIntro2026">
+                        <button class="gallery-nav gallery-prev" onclick="navigateGallery(event, 'CERNOIntro2026', -1)">‹</button>
+                        <img src="images/events/past/IMG_8692 (1).JPG" alt="CERNO Introductory event" class="gallery-image">
+                        <button class="gallery-nav gallery-next" onclick="navigateGallery(event, 'CERNOIntro2026', 1)">›</button>
+                        <div class="gallery-counter"></div>
                     </div>
                     <h3 data-translate="events.first.title">CERNO Introductory event</h3>
                     <p data-translate="events.first.pastdesc">Thank you to everyone who joined us for CERNO's first introductory event! It was an exciting opportunity to meet fellow case enthusiasts, learn about our mission and vision, and build connections within our community. Your enthusiasm and engagement helped make this event a memorable launch for our journey together.</p>

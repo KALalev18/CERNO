@@ -515,6 +515,11 @@ const galleries = {
         images: [], // Will be populated with images from the folder
         currentIndex: 0
     },
+    'CERNOIntro2026': {
+        folder: 'images/events/past',
+        images: [],
+        currentIndex: 0
+    },
     'DuuniExpo2026': {
         folder: 'images/events/past',
         images: [],
@@ -546,6 +551,14 @@ galleries['DuuniExpo2026'].images = [
     'images/events/past/picture1.jpeg',
     'images/events/past/picture2.jpeg',
     'images/events/past/picture 3.jpeg'
+];
+
+galleries['CERNOIntro2026'].images = [
+    'images/events/past/IMG_8692 (1).JPG',
+    'images/events/past/IMG_8712 (1).JPG',
+    'images/events/past/IMG_8716 (1).JPG',
+    'images/events/past/IMG_8721 (1).JPG',
+    'images/events/past/IMG_8730 (1).JPG'
 ];
 
 function navigateGallery(event, galleryId, direction) {
