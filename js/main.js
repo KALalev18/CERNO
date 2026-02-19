@@ -303,6 +303,24 @@ const events = [
         endTime: '19:00',
         description: 'Learn more about CERNO!',
         location: 'M19_D251'
+    },
+    {
+        id: 'info-evening',
+        title: 'Info Evening',
+        date: new Date(2026, 2, 17), // March 17, 2026
+        startTime: '17:00',
+        endTime: '18:30',
+        description: 'Join us for an informative evening about CERNO activities and opportunities',
+        location: 'M19_D251'
+    },
+    {
+        id: 'case-eve',
+        title: 'Case Eve',
+        date: new Date(2026, 3, 1), // April 1, 2026
+        startTime: '17:00',
+        endTime: '19:30',
+        description: 'An evening dedicated to case solving and networking',
+        location: 'M19_D251'
     }
 ];
 
