@@ -89,17 +89,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    const aboutAlumniNote = document.querySelector('.about-alumni-note');
-    const aboutAlumniToggle = document.querySelector('.about-alumni-toggle');
-    const aboutAlumniDropdown = document.getElementById('aboutAlumniDropdown');
+    document.addEventListener('click', function(e) {
+        const aboutAlumniToggle = e.target.closest('.about-alumni-toggle');
+        if (!aboutAlumniToggle) return;
 
-    if (aboutAlumniNote && aboutAlumniToggle && aboutAlumniDropdown) {
-        aboutAlumniToggle.addEventListener('click', function() {
-            const isOpen = aboutAlumniNote.classList.toggle('open');
-            aboutAlumniToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-            aboutAlumniDropdown.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
-        });
-    }
+        const aboutAlumniNote = aboutAlumniToggle.closest('.about-alumni-note');
+        if (!aboutAlumniNote) return;
+
+        const aboutAlumniDropdown = aboutAlumniNote.querySelector('.about-alumni-dropdown');
+        if (!aboutAlumniDropdown) return;
+
+        const isOpen = aboutAlumniNote.classList.toggle('open');
+        aboutAlumniToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        aboutAlumniDropdown.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+    });
 
     // Handle form submissions
     const businessForm = document.getElementById('businessForm');
