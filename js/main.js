@@ -89,6 +89,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    const aboutAlumniNote = document.querySelector('.about-alumni-note');
+    const aboutAlumniToggle = document.querySelector('.about-alumni-toggle');
+    const aboutAlumniDropdown = document.getElementById('aboutAlumniDropdown');
+
+    if (aboutAlumniNote && aboutAlumniToggle && aboutAlumniDropdown) {
+        aboutAlumniToggle.addEventListener('click', function() {
+            const isOpen = aboutAlumniNote.classList.toggle('open');
+            aboutAlumniToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            aboutAlumniDropdown.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+        });
+    }
+
     // Handle form submissions
     const businessForm = document.getElementById('businessForm');
     const studentForm = document.getElementById('studentForm');
@@ -310,7 +322,7 @@ const events = [
         date: new Date(2026, 2, 17), // March 17, 2026
         startTime: '17:00',
         endTime: '18:30',
-        description: 'Join us for an informative evening about CERNO activities and opportunities',
+        description: 'FC Lahti presents a real business challenge and practical solution approach',
         location: 'M19_D251'
     },
     {
@@ -319,7 +331,7 @@ const events = [
         date: new Date(2026, 3, 1), // April 1, 2026
         startTime: '17:00',
         endTime: '19:30',
-        description: 'An evening dedicated to case solving and networking',
+        description: 'First Case Club Night with solution presentations evaluated by a judging panel',
         location: 'M19_D251'
     }
 ];
@@ -649,5 +661,39 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.key === 'Escape') {
             closeImageModal();
         }
+    });
+});
+
+// Alumni collapsible section
+document.addEventListener('DOMContentLoaded', function() {
+    const collapsibleCards = document.querySelectorAll('.alumni-collapse-card');
+
+    collapsibleCards.forEach(card => {
+        const toggle = card.querySelector('.alumni-collapse-toggle');
+        const content = card.querySelector('.alumni-collapse-content');
+
+        if (!toggle || !content) return;
+
+        const setExpandedHeight = () => {
+            if (!card.classList.contains('collapsed')) {
+                content.style.maxHeight = `${content.scrollHeight}px`;
+            }
+        };
+
+        setExpandedHeight();
+
+        toggle.addEventListener('click', function() {
+            const willCollapse = !card.classList.contains('collapsed');
+            card.classList.toggle('collapsed');
+            toggle.setAttribute('aria-expanded', willCollapse ? 'false' : 'true');
+
+            if (willCollapse) {
+                content.style.maxHeight = '0px';
+            } else {
+                content.style.maxHeight = `${content.scrollHeight}px`;
+            }
+        });
+
+        window.addEventListener('resize', setExpandedHeight);
     });
 });

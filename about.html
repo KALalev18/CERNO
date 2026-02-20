@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-translate="about.title">About - LAB Case Club - CERNO</title>
     <link rel="icon" type="image/png" href="images/logos/Cerno media black1.png">
-    <link rel="stylesheet" href="css/styles.css?v=14">
-    <script src="js/translations.js?v=14"></script>
+    <link rel="stylesheet" href="css/styles.css?v=15">
+    <script src="js/translations.js?v=15"></script>
     <script src="js/main.js?v=15" defer></script>
 </head>
 <body>
@@ -46,6 +46,7 @@
         <div class="container-wide">
             <div class="team-grid">
                 <!-- President -->
+                 <!--
                 <div class="team-member">
                     <div class="member-photo">
                         <img src="images/board/Ronja_board.JPG" alt="Ronja">
@@ -56,7 +57,7 @@
                         <p class="member-description" data-translate="about.ronja.desc">Motivated International Business student who is passionate about communication, sustainability, and marketing.</p>
                         <p class="member-quote">"Coming together is a beginning; keeping together is progress; working together is success." - Henry Ford</p>
                     </div>
-                </div>
+                </div>--->
                 
                 <!-- Vice President -->
                 <div class="team-member">
@@ -65,12 +66,24 @@
                     </div>
                     <div class="member-info">
                         <h3>Werner Blanco</h3>
-                        <p class="member-role" data-translate="about.role.vicepresident">Vice President</p>
+                        <p class="member-role" data-translate="about.role.president">President</p>
                         <p class="member-description" data-translate="about.werner.desc">Scheduling at CERNO – aims to share experience from the NCC case competition.</p>
                         <p class="member-quote">"There is nothing impossible for him who will try" – Alexander III of Macedon</p>
                     </div>
                 </div>
                 
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="images/board/Valio_board.png" alt="Valentin">
+                    </div>
+                    <div class="member-info">
+                        <h3>Valentin Dzhambazov</h3>
+                        <p class="member-role" data-translate="about.role.vicepresident">Vice President</p>
+                        <p class="member-description" data-translate="about.valentin.desc">Ambitious International Business student interested in marketing and economics. Passionate about sustainability and problem-solving.</p>
+                        <p class="member-quote">"Cogito, ergo sum" - "I think, therefore I am" - René Descartes</p>
+                    </div>
+                </div>
+
                 <!-- Sponsorship Director -->
                 <div class="team-member">
                     <div class="member-photo">
@@ -85,17 +98,7 @@
                 </div>
                 
                 <!-- Marketing Director -->
-                <div class="team-member">
-                    <div class="member-photo">
-                        <img src="images/board/Valio_board.png" alt="Valentin">
-                    </div>
-                    <div class="member-info">
-                        <h3>Valentin Dzhambazov</h3>
-                        <p class="member-role" data-translate="about.role.marketingleader">Marketing Leader</p>
-                        <p class="member-description" data-translate="about.valentin.desc">Ambitious International Business student interested in marketing and economics. Passionate about sustainability and problem-solving.</p>
-                        <p class="member-quote">"Cogito, ergo sum" - "I think, therefore I am" - René Descartes</p>
-                    </div>
-                </div>
+                
                 
                 <!-- Marketing Director -->
                 <div class="team-member">
@@ -122,10 +125,47 @@
                         <p class="member-quote">"It does not matter how slowly you go as long as you do not stop." - Confucius</p>
                     </div>
                 </div>
+
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="images/board/Lifei_board.JPG" alt="Lifei Shi">
+                    </div>
+                    <div class="member-info">
+                        <h3>Lifei Shi</h3>
+                        <p class="member-role" data-translate="about.role.secretary">Secretary</p>
+                        <p class="member-description" data-translate="about.lifei.desc">Third-year IB student committed to service and team development in CERNO, with strengths in finance and business analysis.</p>
+                        <p class="member-quote" data-translate="about.lifei.quote">"天将降大任于斯人也/When Heaven is about to confer a great responsibility on this man" - 孟子Mengzi</p>
+                    </div>
+                </div>
             </div>
             <div class="supervisor-note">
                 <p data-translate="about.advisor"><strong>Supervising Teacher: Jonathan Bradshaw</strong> – Supervision and approval of board's actions with veto power in votes.</p>
                 <p class="gratitude-text" data-translate="about.advisor.thanks">We are deeply thankful for Jonathan's guidance and support, as he gave us a starting boost for our operations and continues to be instrumental in our success.</p>
+            </div>
+            <div class="supervisor-note about-alumni-note">
+                <button class="about-alumni-toggle" type="button" aria-expanded="false" aria-controls="aboutAlumniDropdown">
+                    <span class="about-alumni-toggle-text" data-translate="about.alumni.link.intro">Recognizing Our Alumni</span>
+                    <span class="about-alumni-toggle-arrow" aria-hidden="true">→</span>
+                </button>
+                <p class="gratitude-text about-alumni-message" data-translate="about.alumni.link.text">Learn more about our alumni network and how past members continue to support CERNO.</p>
+                <div id="aboutAlumniDropdown" class="about-alumni-dropdown" aria-hidden="true">
+                    <div class="about-alumni-group">
+                        <h4 class="about-alumni-group-title" data-translate="about.alumni.group.formerleaders">Former Presidents and Vice Presidents</h4>
+                        <div class="team-grid about-alumni-grid">
+                            <div class="team-member">
+                                <div class="member-photo">
+                                    <img src="images/board/Ronja_board.JPG" alt="Ronja Laine">
+                                </div>
+                                <div class="member-info">
+                                    <h3>Ronja Laine</h3>
+                                    <p class="member-role" data-translate="about.alumni.role.formerpresident">Former President</p>
+                                    <p class="member-description" data-translate="about.ronja.desc">Motivated International Business student who is passionate about communication, sustainability, and marketing.</p>
+                                    <p class="member-quote" data-translate="about.ronja.quote">"Coming together is a beginning; keeping together is progress; working together is success." - Henry Ford</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
