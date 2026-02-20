@@ -437,6 +437,18 @@ body {
     padding: 0;
 }
 
+.about-alumni-details {
+    width: 100%;
+}
+
+.about-alumni-toggle {
+    list-style: none;
+}
+
+.about-alumni-toggle::-webkit-details-marker {
+    display: none;
+}
+
 .about-alumni-toggle-text {
     color: #000;
 }
@@ -449,7 +461,7 @@ body {
     transition: transform 0.25s ease;
 }
 
-.about-alumni-note.open .about-alumni-toggle-arrow {
+.about-alumni-details[open] .about-alumni-toggle-arrow {
     transform: rotate(90deg);
 }
 
@@ -461,7 +473,7 @@ body {
     line-height: 1.6;
 }
 
-.about-alumni-note.open .about-alumni-message {
+.about-alumni-details[open] .about-alumni-message {
     display: none;
 }
 
@@ -473,7 +485,7 @@ body {
     margin-top: 0;
 }
 
-.about-alumni-note.open .about-alumni-dropdown {
+.about-alumni-details[open] .about-alumni-dropdown {
     max-height: 1200px;
     opacity: 1;
     margin-top: 12px;
@@ -2548,7 +2560,7 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .about-alumni-note.open .about-alumni-dropdown {
+    .about-alumni-details[open] .about-alumni-dropdown {
         max-height: 2200px;
     }
 
@@ -2629,4 +2641,12 @@ body {
         height: 40px;
         font-size: 24px;
     }
+}
+
+.about-alumni-details[open] .about-alumni-message {
+    display: none !important;
+}
+
+.about-alumni-details:not([open]) .about-alumni-message {
+    display: block !important;
 }

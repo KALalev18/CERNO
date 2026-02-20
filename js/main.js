@@ -92,16 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('click', function(e) {
         const aboutAlumniToggle = e.target.closest('.about-alumni-toggle');
         if (!aboutAlumniToggle) return;
-
-        const aboutAlumniNote = aboutAlumniToggle.closest('.about-alumni-note');
-        if (!aboutAlumniNote) return;
-
-        const aboutAlumniDropdown = aboutAlumniNote.querySelector('.about-alumni-dropdown');
-        if (!aboutAlumniDropdown) return;
-
-        const isOpen = aboutAlumniNote.classList.toggle('open');
-        aboutAlumniToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        aboutAlumniDropdown.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+        toggleAboutAlumni({ preventDefault: () => {}, currentTarget: aboutAlumniToggle });
     });
 
     // Handle form submissions
@@ -299,6 +290,23 @@ function closeInfoPopup() {
     document.body.style.overflow = '';
 }
 
+function toggleAboutAlumni(event) {
+    if (event) event.preventDefault();
+
+    const aboutAlumniToggle = event?.currentTarget || document.querySelector('.about-alumni-toggle');
+    if (!aboutAlumniToggle) return;
+
+    const aboutAlumniNote = aboutAlumniToggle.closest('.about-alumni-note');
+    if (!aboutAlumniNote) return;
+
+    const aboutAlumniDropdown = aboutAlumniNote.querySelector('.about-alumni-dropdown');
+    if (!aboutAlumniDropdown) return;
+
+    const isOpen = aboutAlumniNote.classList.toggle('open');
+    aboutAlumniToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    aboutAlumniDropdown.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+}
+
 // Calendar functionality
 const events = [
     {
@@ -326,6 +334,15 @@ const events = [
         startTime: '17:00',
         endTime: '18:30',
         description: 'FC Lahti presents a real business challenge and practical solution approach',
+        location: 'M19_D251'
+    },
+    {
+        id: 'solutions-day',
+        title: 'Solution Presentation Day',
+        date: new Date(2026, 2, 3), // March 3, 2026
+        startTime: '17:00',
+        endTime: '19:00',
+        description: 'Teams formed during the CERNO Introductory event present their business solutions',
         location: 'M19_D251'
     },
     {
