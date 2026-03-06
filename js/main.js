@@ -552,6 +552,11 @@ const galleries = {
         images: [],
         currentIndex: 0
     },
+    'SolutionsDay2026': {
+        folder: 'images/events/past/3.3',
+        images: [],
+        currentIndex: 0
+    },
     'DuuniExpo2026': {
         folder: 'images/events/past',
         images: [],
@@ -591,6 +596,15 @@ galleries['CERNOIntro2026'].images = [
     'images/events/past/IMG_8716 (1).JPG',
     'images/events/past/IMG_8721 (1).JPG',
     'images/events/past/IMG_8730 (1).JPG'
+];
+
+galleries['SolutionsDay2026'].images = [
+    'images/events/past/3.3/20260303_171516.jpg',
+    'images/events/past/3.3/20260303_172110.jpg',
+    'images/events/past/3.3/20260303_183159.jpg',
+    'images/events/past/3.3/IMG_8766.JPG',
+    'images/events/past/3.3/IMG_8787.JPG',
+    'images/events/past/3.3/IMG_8799.JPG'
 ];
 
 function navigateGallery(event, galleryId, direction) {
