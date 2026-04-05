@@ -1297,6 +1297,7 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-bottom: 40px;
+    align-items: stretch;
 }
 
 .resource-card {
@@ -1305,7 +1306,8 @@ body {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     text-decoration: none;
     color: inherit;
-    display: block;
+    display: flex;
+    flex-direction: column;
     cursor: pointer;
     transition: box-shadow 0.3s;
 }
@@ -1330,7 +1332,6 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    cursor: pointer;
     transition: transform 0.3s ease;
 }
 
@@ -1409,6 +1410,7 @@ body {
     background-color: #000;
     color: white;
     padding: 20px;
+    flex: 1;
 }
 
 .resource-info h3 {

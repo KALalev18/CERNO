@@ -353,6 +353,24 @@ const events = [
         endTime: '19:30',
         description: 'First Case Club Night with solution presentations evaluated by a judging panel',
         location: 'M19_D251'
+    },
+    {
+        id: 'city-lahti-info',
+        title: 'City of Lahti - Info',
+        date: new Date(2026, 3, 23), // April 23, 2026
+        startTime: '15:00',
+        endTime: '17:00',
+        description: 'City of Lahti presents a real business challenge and practical solution approach',
+        location: 'M19_D251'
+    },
+    {
+        id: 'city-lahti-presentations',
+        title: 'City of Lahti - Presentations',
+        date: new Date(2026, 4, 5), // May 5, 2026
+        startTime: '15:00',
+        endTime: '17:00',
+        description: 'Teams present their solutions to the City of Lahti business challenge',
+        location: 'M19_D251'
     }
 ];
 
@@ -561,6 +579,16 @@ const galleries = {
         folder: 'images/events/past',
         images: [],
         currentIndex: 0
+    },
+    'InfoEvening2026': {
+        folder: 'images/events/past/17.3',
+        images: [],
+        currentIndex: 0
+    },
+    'CaseEve2026': {
+        folder: 'images/events/past/1.4',
+        images: [],
+        currentIndex: 0
     }
 };
 
@@ -605,6 +633,19 @@ galleries['SolutionsDay2026'].images = [
     'images/events/past/3.3/IMG_8766.JPG',
     'images/events/past/3.3/IMG_8787.JPG',
     'images/events/past/3.3/IMG_8799.JPG'
+];
+
+galleries['InfoEvening2026'].images = [
+    'images/events/past/17.3/1000000677.jpg',
+    'images/events/past/17.3/1000000678.jpg',
+    'images/events/past/17.3/1000000679.jpg'
+];
+
+galleries['CaseEve2026'].images = [
+    'images/events/past/1.4/IMG_8900.JPG',
+    'images/events/past/1.4/IMG_8987.JPG',
+    'images/events/past/1.4/IMG_9010.JPG',
+    'images/events/past/1.4/IMG_9123.JPG'
 ];
 
 function navigateGallery(event, galleryId, direction) {
@@ -670,7 +711,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Add click handlers to all competition images for zoom
-    document.querySelectorAll('.competition-image img, .past-event-image img, .resource-image img').forEach(img => {
+    document.querySelectorAll('.competition-image img, .past-event-image img').forEach(img => {
         img.addEventListener('click', function(e) {
             // Don't open modal if clicking on gallery navigation buttons
             if (e.target.closest('.gallery-nav')) {
