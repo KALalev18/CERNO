@@ -589,6 +589,16 @@ const galleries = {
         folder: 'images/events/past/1.4',
         images: [],
         currentIndex: 0
+    },
+    'CityOfLahtiInfo2026': {
+        folder: 'images/events/past/23.4',
+        images: [],
+        currentIndex: 0
+    },
+    'CityOfLahtiPresentations2026': {
+        folder: 'images/events/past/5.5',
+        images: [],
+        currentIndex: 0
     }
 };
 
@@ -646,6 +656,20 @@ galleries['CaseEve2026'].images = [
     'images/events/past/1.4/IMG_8987.JPG',
     'images/events/past/1.4/IMG_9010.JPG',
     'images/events/past/1.4/IMG_9123.JPG'
+];
+
+galleries['CityOfLahtiInfo2026'].images = [
+    'images/events/past/23.4/IMG_9133.JPG',
+    'images/events/past/23.4/IMG_9140.JPG',
+    'images/events/past/23.4/IMG_9208.JPG'
+];
+
+galleries['CityOfLahtiPresentations2026'].images = [
+    'images/events/past/5.5/IMG_9359.JPG',
+    'images/events/past/5.5/IMG_9420.JPG',
+    'images/events/past/5.5/IMG_9463.JPG',
+    'images/events/past/5.5/IMG_9469.JPG',
+    'images/events/past/5.5/IMG_9471.JPG'
 ];
 
 function navigateGallery(event, galleryId, direction) {
