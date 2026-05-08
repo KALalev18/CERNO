@@ -125,8 +125,8 @@ const translations = {
         // Resources Page
         'resources.title': 'Resources - LAB Case Club - CERNO',
         'resources.heading': 'Resources',
-        'resources.startheading': 'Start here',
-        'resources.businessheading': 'For case companies',
+        'resources.startheading': 'Case competitions',
+        'resources.businessheading': 'Learn about CERNO',
         'resources.ncc.title': 'NCC 2025 Case Competition',
         'resources.ncc.desc': 'Explore insights from the Nordic Case Competition 2025. Learn about the case format, participating companies, and key takeaways from this prestigious business case event.',
         'resources.ncc2026.title': 'NCC 2026 Case Competition',
@@ -135,7 +135,7 @@ const translations = {
         'resources.nibs.desc': 'Explore insights from the NIBS Competition China. Learn about the case format, participating companies, and key takeaways from this international case event.',
         'resources.cerno.en.title': 'Cerno - English',
         'resources.cerno.en.desc': 'Learn about Cerno: overview, collaboration opportunities, and key highlights in this English brochure.',
-        'resources.cerno.fi.title': 'Cerno - Suomi',
+        'resources.cerno.fi.title': 'Cerno - Finnish',
         'resources.cerno.fi.desc': 'Cerno-esite paikallisesta toiminnasta, yhteistyömahdollisuuksista ja yhteystiedoista.',
 
         'resources.nutshell.title': 'Cerno in a nutshell',
@@ -326,8 +326,8 @@ const translations = {
         // Resources Page
         'resources.title': 'Resurssit - LAB Case Club - CERNO',
         'resources.heading': 'Resurssit',
-        'resources.startheading': 'Aloita tästä',
-        'resources.businessheading': 'Case-yrityksille',
+        'resources.startheading': 'Case-kilpailut',
+        'resources.businessheading': 'Lue lisää CERNOsta',
         'resources.ncc.title': 'NCC 2025 Case-kilpailu',
         'resources.ncc.desc': 'Tutustu Nordic Case Competition 2025 -tapahtumaan. Opi case-kilpailuiden rakenteesta, osallistuvista yrityksistä ja tärkeimmistä opeista tästä arvostetuista liiketoimintacase-tapahtumasta.',
         'resources.ncc2026.title': 'NCC 2026 Case-kilpailu',
