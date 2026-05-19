@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> <!-- meta info, title, styles, and scripts -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-translate="resources.title">Resources - LAB Case Club - CERNO</title>
     <link rel="icon" type="image/png" href="images/logos/Cerno media black1.png">
-    <link rel="stylesheet" href="css/styles.css?v=25">
-    <script src="js/translations.js?v=25"></script>
-    <script src="js/main.js?v=25" defer></script>
+    <link rel="stylesheet" href="css/styles.css?v=24">
+    <script src="js/translations.js?v=24"></script>
+    <script src="js/main.js?v=24" defer></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -29,6 +29,7 @@
                 <span class="lang-separator">/</span>
                 <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
             </div>
+            <!--mobile menu-->
             <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
             <a href="contact" class="contact-btn" data-translate="nav.contact">Contact us</a>
         </div>
@@ -37,7 +38,7 @@
     <!-- Case Companies Section -->
     <section class="resources-section">
         <div class="container-wide">
-            <h1 class="section-title" data-translate="resources.businessheading">For case companies</h1>
+            <h1 class="section-title" data-translate="resources.businessheading">Learn about CERNO</h1>
             <div class="resources-grid">
                 <a href="assets/files/Cerno-ENGLISH FINAL.pdf" class="resource-card downloadable" download>
                     <div class="resource-image">
@@ -50,10 +51,10 @@
                 </a>
                 <a href="assets/files/Cerno-Finnish final.pdf" class="resource-card downloadable" download>
                     <div class="resource-image">
-                        <img src="images/resources/CERNO-Finnish.png" alt="Cerno Finnish Brochure Preview">
+                        <img src="images/resources/CERNO-English.png" alt="Cerno English Brochure Preview">
                     </div>
                     <div class="resource-info">
-                        <h3 data-translate="resources.cerno.fi.title">Cerno - Suomi</h3>
+                        <h3 data-translate="resources.cerno.fi.title">Cerno - Finnish</h3>
                         <p data-translate="resources.cerno.fi.desc">Cerno-esite paikallisesta toiminnasta, yhteistyömahdollisuuksista ja yhteystiedoista.</p>
                     </div>
                 </a>
@@ -74,7 +75,7 @@
     <!-- Resources Section -->
     <section class="resources-section">
         <div class="container-wide">
-            <h1 class="section-title" data-translate="resources.startheading">Start here</h1>
+            <h1 class="section-title" data-translate="resources.startheading">Case competitions</h1>
             <div class="resources-grid">
 
                 <a href="assets/files/Blog NCC 2026.pdf" class="resource-card downloadable" download>
@@ -147,7 +148,7 @@
                 <div class="footer-legal">
                     <h4 data-translate="footer.legal">Terms and Conditions</h4>
                     <p><a href="#" onclick="openPrivacyPopup(event); return false;" data-translate="footer.privacy">Privacy Policy</a></p>
-                    <div class="footer-social">
+                    <div class="footer-social"> <!-- Social media icons with links - ot neta vzaimstvani -->
                         <a href="https://www.instagram.com/cernocaseclub/" target="_blank" aria-label="Instagram">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
                                 <rect x="2" y="2" width="20" height="20" rx="5" stroke="white" fill="none" stroke-width="2"/>
@@ -165,7 +166,7 @@
                 <div class="footer-copyright">
                     <p>© 2026 LAB Case Club. All rights reserved.</p>
                 </div>
-                <div class="footer-sponsors">
+                <div class="footer-sponsors"> <!-- Sponsor logos and links -->
                     <div class="sponsor-logos">
                         <a href="https://jaadewater.com" target="_blank" rel="noopener noreferrer">
                             <img src="images/sponsors/jaade_logo-removebg-preview.png" alt="Jaade" class="sponsor-logo">
